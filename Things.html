@@ -1,25 +1,178 @@
 <!DOCTYPE html>
-<!-- saved from url=(0026)Gallary.html -->
 <html lang="en-US" class="wf-clby-n4-active wf-clby-n7-active wf-ftnk-n3-active wf-ftnk-n4-active wf-ftnk-n7-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="twitter:card" content="summary_large_image">
       <meta name="twitter:site" content="@AdobePortfolio">
-      <meta property="og:title" content="Finding Zhu Hong - Gallery">
-      <meta property="og:image" content="assets/images/ec03d42a-7ce3-41a6-a48c-d25319024d22_rwc_405x73x437x582x437.jpg">
+      <meta property="og:title" content="Finding Zhu Hong - Things">
         <link rel="icon" href="assets/images/57c9dc2a-3060-486c-8e61-1921abf3e60c_carw_1x1x32.png">
       <link rel="stylesheet" href="./assets/css/main.css" type="text/css">
-      <link rel="stylesheet" href="./assets/css/d9e67801158c734dad9866d99b4a25931770610098.css" type="text/css">
-    <link rel="canonical" href="Gallary.html">
-      <title>Finding Zhu Hong - Gallery</title>
+      <link rel="stylesheet" href="./assets/css/0ed459722b839e5af4ab49df1d9ab7b41770610098.css" type="text/css">
+    <link rel="canonical" href="Things.html">
+      <title>Finding Zhu Hong - Things</title>
     <script type="text/javascript" src="./assets/js/typekit.js" async="" onload="
     try {
       window.Typekit.load();
     } catch (e) {
-      console.warn(&#39;Typekit not loaded.&#39;);
+      console.warn('Typekit not loaded.');
     }
     "></script><style type="text/css">@font-face{font-family:clby;src:url(https://use.typekit.net/af/61c231/00000000000000007735d3f4/31/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/61c231/00000000000000007735d3f4/31/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/61c231/00000000000000007735d3f4/31/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:clby;src:url(https://use.typekit.net/af/d4e9cc/00000000000000007735d3e7/31/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/d4e9cc/00000000000000007735d3e7/31/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/d4e9cc/00000000000000007735d3e7/31/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:ftnk;src:url(https://use.typekit.net/af/9c3000/000000000000000077586b5e/31/l?subset_id=2&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/9c3000/000000000000000077586b5e/31/d?subset_id=2&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/9c3000/000000000000000077586b5e/31/a?subset_id=2&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:ftnk;src:url(https://use.typekit.net/af/26b618/000000000000000077586b59/31/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/26b618/000000000000000077586b59/31/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/26b618/000000000000000077586b59/31/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:ftnk;src:url(https://use.typekit.net/af/361f51/000000000000000077586b60/31/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/361f51/000000000000000077586b60/31/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/361f51/000000000000000077586b60/31/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-stretch:normal;font-display:auto;}</style>
-<style type="text/css"></style></head>
+<style type="text/css">
+.things-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding-top: 0;
+}
+.things-grid .things-item {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+.things-grid .things-item::before {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+.things-grid .things-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.things-grid .things-item:hover img {
+  transform: scale(1.03);
+}
+.things-grid .things-item .things-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(34, 34, 34, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+.things-grid .things-item .things-caption span {
+  color: #fff;
+  font-family: ftnk;
+  font-size: 15px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  padding: 8%;
+  line-height: 1.4;
+}
+.things-grid .things-item:hover .things-caption {
+  opacity: 1;
+}
+.things-lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  background: rgba(255,255,255,0.96);
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+.things-lightbox.active {
+  display: flex;
+}
+.things-lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+.things-lightbox .things-lb-close {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 10002;
+}
+.things-lightbox .things-lb-close::before,
+.things-lightbox .things-lb-close::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 2px;
+  background: #282828;
+}
+.things-lightbox .things-lb-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.things-lightbox .things-lb-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.things-lightbox .things-lb-nav {
+  position: fixed;
+  top: 0;
+  width: 15%;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  z-index: 10001;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.things-lightbox .things-lb-nav:hover {
+  opacity: 1;
+}
+.things-lightbox .things-lb-prev {
+  left: 0;
+  justify-content: flex-start;
+  padding-left: 24px;
+}
+.things-lightbox .things-lb-next {
+  right: 0;
+  justify-content: flex-end;
+  padding-right: 24px;
+}
+.things-lightbox .things-lb-nav svg {
+  width: 40px;
+  height: 40px;
+}
+.things-lightbox .things-lb-nav svg circle {
+  fill: #696969;
+  opacity: 0.2;
+}
+.things-lightbox .things-lb-nav:hover svg circle {
+  opacity: 0.4;
+}
+.things-lightbox .things-lb-nav svg path {
+  fill: #fff;
+}
+@media (max-width: 932px) {
+  .things-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+}
+@media (max-width: 540px) {
+  .things-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+}
+</style>
+</head>
   <body class="link-transition">  <div class="page-background-video page-background-video-with-panel">
   </div>
   <div class="js-responsive-nav">
@@ -29,9 +182,9 @@
       </div>
           <nav class="nav-container" data-hover-hint="nav" data-hover-hint-placement="bottom-start">
                 <div class="gallery-title"><a href="index.html">Works</a></div>
-                <div class="gallery-title"><a href="Gallary.html" class="active">Gallery</a></div>
+                <div class="gallery-title"><a href="Gallary.html">Gallery</a></div>
                 <div class="gallery-title"><a href="Books.html">Books</a></div>
-                <div class="gallery-title"><a href="Things.html">Things</a></div>
+                <div class="gallery-title"><a href="Things.html" class="active">Things</a></div>
       <div class="page-title">
         <a href="Me.html">Me</a>
       </div>
@@ -105,12 +258,12 @@
         </div>
     </div>
   </div>
-    <header class="site-header js-site-header  js-fixed-nav" data-context="theme.nav" data-hover-hint="nav" data-hover-hint-placement="top-start">
+    <header class="site-header js-site-header js-fixed-nav on-scroll" data-context="theme.nav" data-hover-hint="nav" data-hover-hint-placement="top-start">
         <nav class="nav-container" data-hover-hint="nav" data-hover-hint-placement="bottom-start">
                 <div class="gallery-title"><a href="index.html">Works</a></div>
-                <div class="gallery-title"><a href="Gallary.html" class="active">Gallery</a></div>
+                <div class="gallery-title"><a href="Gallary.html">Gallery</a></div>
                 <div class="gallery-title"><a href="Books.html">Books</a></div>
-                <div class="gallery-title"><a href="Things.html">Things</a></div>
+                <div class="gallery-title"><a href="Things.html" class="active">Things</a></div>
       <div class="page-title">
         <a href="Me.html">Me</a>
       </div>
@@ -201,68 +354,33 @@
     <div class="site-container">
       <div class="site-content e2e-site-content">
         <main>
-          <section class="project-covers" data-context="page.gallery.covers">
-          <a class="project-cover js-project-cover-touch hold-space" href="GallaryAwards.html" data-context="pages" data-identity="id:p695b89737217d6a575e87eeec1d0564928f96d23061d318e029e1" data-hover-hint="galleryPageCover" data-hover-hint-id="p695b89737217d6a575e87eeec1d0564928f96d23061d318e029e1">
-            <div class="cover-content-container">
-              <div class="cover-image-wrap">
-                <div class="cover-image">
-                    <div class="cover cover-normal">
-
-            <img class="cover__img js-lazy image-loaded" src="./assets/images/ec03d42a-7ce3-41a6-a48c-d25319024d22_rwc_405x73x437x582x437.jpg" srcset="assets/images/ec03d42a-7ce3-41a6-a48c-d25319024d22_rwc_405x73x437x582x640.jpg 640w, assets/images/ec03d42a-7ce3-41a6-a48c-d25319024d22_rwc_405x73x437x582x437.jpg 1280w, assets/images/ec03d42a-7ce3-41a6-a48c-d25319024d22_rwc_405x73x437x582x437.jpg 1366w, assets/images/ec03d42a-7ce3-41a6-a48c-d25319024d22_rwc_405x73x437x582x437.jpg 1920w, assets/images/ec03d42a-7ce3-41a6-a48c-d25319024d22_rwc_405x73x437x582x437.jpg 2560w, assets/images/ec03d42a-7ce3-41a6-a48c-d25319024d22_rwc_405x73x437x582x437.jpg 5120w" sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 3)">
-                              </div>
-                </div>
-              </div>
-              <div class="details-wrap">
-                <div class="details">
-                  <div class="details-inner">
-                      <div class="title preserve-whitespace">Awards</div>
-                      <div class="date">2026</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a class="project-cover js-project-cover-touch hold-space" href="Gallary500px.html" data-context="pages" data-identity="id:p68b46708f3c78b1c03d2e94da83ae2c744893ff9c301b6025ced9" data-hover-hint="galleryPageCover" data-hover-hint-id="p68b46708f3c78b1c03d2e94da83ae2c744893ff9c301b6025ced9">
-            <div class="cover-content-container">
-              <div class="cover-image-wrap">
-                <div class="cover-image">
-                    <div class="cover cover-normal">
-
-            <img class="cover__img js-lazy image-loaded" src="./assets/images/0a479868-cf63-4ca2-8dd9-d1fbcc2a081d_rwc_0x157x1920x2557x1920.jpg" srcset="assets/images/0a479868-cf63-4ca2-8dd9-d1fbcc2a081d_rwc_0x157x1920x2557x640.jpg 640w, assets/images/0a479868-cf63-4ca2-8dd9-d1fbcc2a081d_rwc_0x157x1920x2557x1280.jpg 1280w, assets/images/0a479868-cf63-4ca2-8dd9-d1fbcc2a081d_rwc_0x157x1920x2557x1366.jpg 1366w, assets/images/0a479868-cf63-4ca2-8dd9-d1fbcc2a081d_rwc_0x157x1920x2557x1920.jpg 1920w, assets/images/0a479868-cf63-4ca2-8dd9-d1fbcc2a081d_rwc_0x157x1920x2557x1920.jpg 2560w, assets/images/0a479868-cf63-4ca2-8dd9-d1fbcc2a081d_rwc_0x157x1920x2557x1920.jpg 5120w" sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 3)">
-                              </div>
-                </div>
-              </div>
-              <div class="details-wrap">
-                <div class="details">
-                  <div class="details-inner">
-                      <div class="title preserve-whitespace">500px Authorized</div>
-                      <div class="date">2025</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a class="project-cover js-project-cover-touch hold-space" href="GallaryWorld.html" data-context="pages" data-identity="id:p68b4692a3b120d956523fd80bfca833a03927cddc257b2a612132" data-hover-hint="galleryPageCover" data-hover-hint-id="p68b4692a3b120d956523fd80bfca833a03927cddc257b2a612132">
-            <div class="cover-content-container">
-              <div class="cover-image-wrap">
-                <div class="cover-image">
-                    <div class="cover cover-normal">
-
-            <img class="cover__img js-lazy image-loaded" src="./assets/images/12337000-f146-42c8-984c-3f68e333b6af_rwc_471x32x714x952x714.jpg" srcset="assets/images/12337000-f146-42c8-984c-3f68e333b6af_rwc_471x32x714x952x640.jpg 640w, assets/images/12337000-f146-42c8-984c-3f68e333b6af_rwc_471x32x714x952x1280.jpg 1280w, assets/images/12337000-f146-42c8-984c-3f68e333b6af_rwc_471x32x714x952x1366.jpg 1366w, assets/images/12337000-f146-42c8-984c-3f68e333b6af_rwc_471x32x714x952x714.jpg 1920w, assets/images/12337000-f146-42c8-984c-3f68e333b6af_rwc_471x32x714x952x714.jpg 2560w, assets/images/12337000-f146-42c8-984c-3f68e333b6af_rwc_471x32x714x952x714.jpg 5120w" sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 3)">
-                              </div>
-                </div>
-              </div>
-              <div class="details-wrap">
-                <div class="details">
-                  <div class="details-inner">
-                      <div class="title preserve-whitespace">World</div>
-                      <div class="date">2025</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          </section>
+          <div style="padding-top: 140px;"></div>
+          <div class="things-grid">
+            <div class="things-item" data-index="0"><img src="./assets/things/things-01.jpg" alt=""><div class="things-caption"><span>Morning Light</span></div></div>
+            <div class="things-item" data-index="1"><img src="./assets/things/things-02.jpg" alt=""><div class="things-caption"><span>Found Object</span></div></div>
+            <div class="things-item" data-index="2"><img src="./assets/things/things-03.jpg" alt=""><div class="things-caption"><span>Ceramic Piece</span></div></div>
+            <div class="things-item" data-index="3"><img src="./assets/things/things-04.jpg" alt=""><div class="things-caption"><span>Brass Detail</span></div></div>
+            <div class="things-item" data-index="4"><img src="./assets/things/things-05.jpg" alt=""><div class="things-caption"><span>Pocket Knife</span></div></div>
+            <div class="things-item" data-index="5"><img src="./assets/things/things-06.jpg" alt=""><div class="things-caption"><span>Old Map</span></div></div>
+            <div class="things-item" data-index="6"><img src="./assets/things/things-07.jpg" alt=""><div class="things-caption"><span>Leather Case</span></div></div>
+            <div class="things-item" data-index="7"><img src="./assets/things/things-08.jpg" alt=""><div class="things-caption"><span>Film Camera</span></div></div>
+            <div class="things-item" data-index="8"><img src="./assets/things/things-09.jpg" alt=""><div class="things-caption"><span>Ink Stamp</span></div></div>
+            <div class="things-item" data-index="9"><img src="./assets/things/things-10.jpg" alt=""><div class="things-caption"><span>Vinyl Record</span></div></div>
+            <div class="things-item" data-index="10"><img src="./assets/things/things-11.jpg" alt=""><div class="things-caption"><span>Wooden Box</span></div></div>
+            <div class="things-item" data-index="11"><img src="./assets/things/things-12.jpg" alt=""><div class="things-caption"><span>Glass Jar</span></div></div>
+            <div class="things-item" data-index="12"><img src="./assets/things/things-13.jpg" alt=""><div class="things-caption"><span>Postcard</span></div></div>
+            <div class="things-item" data-index="13"><img src="./assets/things/things-14.jpg" alt=""><div class="things-caption"><span>Stone Weight</span></div></div>
+            <div class="things-item" data-index="14"><img src="./assets/things/things-15.jpg" alt=""><div class="things-caption"><span>Woven Cloth</span></div></div>
+            <div class="things-item" data-index="15"><img src="./assets/things/things-16.jpg" alt=""><div class="things-caption"><span>Tin Box</span></div></div>
+            <div class="things-item" data-index="16"><img src="./assets/things/things-17.jpg" alt=""><div class="things-caption"><span>Compass</span></div></div>
+            <div class="things-item" data-index="17"><img src="./assets/things/things-18.jpg" alt=""><div class="things-caption"><span>Paper Clip</span></div></div>
+            <div class="things-item" data-index="18"><img src="./assets/things/things-19.jpg" alt=""><div class="things-caption"><span>Key Ring</span></div></div>
+            <div class="things-item" data-index="19"><img src="./assets/things/things-20.jpg" alt=""><div class="things-caption"><span>Clay Cup</span></div></div>
+            <div class="things-item" data-index="20"><img src="./assets/things/things-21.jpg" alt=""><div class="things-caption"><span>Iron Hook</span></div></div>
+            <div class="things-item" data-index="21"><img src="./assets/things/things-22.jpg" alt=""><div class="things-caption"><span>Silk Ribbon</span></div></div>
+            <div class="things-item" data-index="22"><img src="./assets/things/things-23.jpg" alt=""><div class="things-caption"><span>Copper Coin</span></div></div>
+            <div class="things-item" data-index="23"><img src="./assets/things/things-24.jpg" alt=""><div class="things-caption"><span>Sketch Book</span></div></div>
+          </div>
               <footer class="site-footer" data-hover-hint="footer">
                   <div class="footer-tagline">I can always surprise you</div>
                   <div class="social pf-footer-social" data-context="theme.footer" data-hover-hint="footerSocialIcons">
@@ -339,49 +457,84 @@
     </div>
   </div>
 
+  <div class="things-lightbox" id="thingsLightbox">
+    <div class="things-lb-close" id="thingsLbClose"></div>
+    <div class="things-lb-nav things-lb-prev" id="thingsLbPrev">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+        <circle cx="30" cy="30" r="30"></circle>
+        <path d="M36.8,36.4L30.3,30l6.5-6.4l-3.5-3.4l-10,9.8l10,9.8L36.8,36.4z"></path>
+      </svg>
+    </div>
+    <div class="things-lb-nav things-lb-next" id="thingsLbNext">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+        <circle cx="30" cy="30" r="30"></circle>
+        <path d="M24.2,23.5l6.6,6.5l-6.6,6.5l3.6,3.5L37.8,30l-10.1-9.9L24.2,23.5z"></path>
+      </svg>
+    </div>
+    <img id="thingsLbImg" src="" alt="">
+  </div>
+
 <script type="text/javascript">
-  // fix for Safari's back/forward cache
   window.onpageshow = function(e) {
     if (e.persisted) { window.location.reload(); }
   };
 </script>
-  <script type="text/javascript">var __config__ = {"page_id":"p68b2fe4bea162d78675ef1d44f5ebab0b6a6be473e88ca8c8336b","theme":{"name":"marta\/tom"},"pageTransition":true,"linkTransition":true,"disableDownload":false,"localizedValidationMessages":{"required":"This field is required","Email":"This field must be a valid email address"},"lightbox":{"enabled":true,"color":{"opacity":0.94,"hex":"#fff"}},"cookie_banner":{"enabled":false}};</script>
+  <script type="text/javascript">var __config__ = {"page_id":"things","theme":{"name":"marta\/tom"},"pageTransition":true,"linkTransition":true,"disableDownload":false,"localizedValidationMessages":{"required":"This field is required","Email":"This field must be a valid email address"},"lightbox":{"enabled":false},"cookie_banner":{"enabled":false}};</script>
   <script type="text/javascript" src="./assets/js/translations.js"></script>
-  <script type="text/javascript" src="./assets/js/main.js"></script><div class="js-lightbox-wrap offscreen" id="lightbox-wrap">
-    
-  <div class="js-blocking" id="lightbox-blocking">
-    <span class="lightbox-spinner"></span>
-  </div>
+  <script type="text/javascript" src="./assets/js/main.js"></script>
 
-    <div class="js-lightbox-inner-wrap" id="lightbox-inner-wrap">
-      <div class="js-img-wrap" id="lightbox-img-wrap">
-        
-  <div class="lightbox-extra control prev js-control js-prev">
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="60" height="60" viewBox="0 0 60 60" xml:space="preserve">
-      <circle class="lightbox-icon-bg" cx="30" cy="30" r="30"></circle>
-      <path class="lightbox-icon-arrow" d="M36.8,36.4L30.3,30l6.5-6.4l-3.5-3.4l-10,9.8l10,9.8L36.8,36.4z"></path>
-    </svg>
-  </div>
+<script>
+(function() {
+  var items = document.querySelectorAll('.things-item');
+  var lightbox = document.getElementById('thingsLightbox');
+  var lbImg = document.getElementById('thingsLbImg');
+  var total = items.length;
+  var current = 0;
 
-        
-  <div class="lightbox-extra control next js-control js-next">
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="60" height="60" viewBox="0 0 60 60" xml:space="preserve">
-      <circle class="lightbox-icon-bg" cx="30" cy="30" r="30"></circle>
-      <path class="lightbox-icon-arrow" d="M24.2,23.5l6.6,6.5l-6.6,6.5l3.6,3.5L37.8,30l-10.1-9.9L24.2,23.5z"></path>
-    </svg>
-  </div>
+  function show(i) {
+    current = i;
+    lbImg.src = items[i].querySelector('img').src;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
 
-        
-  <div class="lightbox-extra control close js-control js-close">
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
-      <circle class="lightbox-icon-bg" cx="50" cy="50" r="47.5"></circle>
-      <polygon class="lightbox-icon-close" points="64.5,39.8 60.2,35.5 50,45.7 39.8,35.5 35.5,39.8 45.7,50 35.5,60.2 39.8,64.5 50,54.3 60.2,64.5 64.5,60.2 54.3,50"></polygon>
-    </svg>
-  </div>
+  function hide() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
 
-        <div class="lightbox-contents js-contents"></div>
-      </div>
-    </div>
-  </div>
+  items.forEach(function(item) {
+    item.addEventListener('click', function() {
+      show(parseInt(this.getAttribute('data-index')));
+    });
+  });
+
+  document.getElementById('thingsLbClose').addEventListener('click', function(e) {
+    e.stopPropagation();
+    hide();
+  });
+
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox || e.target === lbImg) hide();
+  });
+
+  document.getElementById('thingsLbPrev').addEventListener('click', function(e) {
+    e.stopPropagation();
+    show((current - 1 + total) % total);
+  });
+
+  document.getElementById('thingsLbNext').addEventListener('click', function(e) {
+    e.stopPropagation();
+    show((current + 1) % total);
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') hide();
+    if (e.key === 'ArrowLeft') show((current - 1 + total) % total);
+    if (e.key === 'ArrowRight') show((current + 1) % total);
+  });
+})();
+</script>
 
 </body></html>
