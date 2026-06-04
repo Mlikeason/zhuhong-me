@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<!-- saved from url=(0023)index.html -->
 <html lang="en-US" class="wf-clby-n4-active wf-clby-n7-active wf-ftnk-n3-active wf-ftnk-n4-active wf-ftnk-n7-active wf-active"><head>
-      <meta property="og:description" content="The portfolio of Zhu Hong (M) — design, writing, photography. Five years in Singapore, two decades in Beijing.">
-      <meta name="description" content="The portfolio of Zhu Hong (M) — design, writing, photography. Five years in Singapore, two decades in Beijing.">
+      <meta property="og:description" content="Things I've made and kept — a small museum of objects from a designer's life. Zhu Hong, design leader at Lazada SEA.">
+      <meta name="description" content="Things I've made and kept — a small museum of objects from a designer's life. Zhu Hong, design leader at Lazada SEA.">
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="twitter:card" content="summary_large_image">
       <meta property="og:title" content="Finding Zhu Hong">
       <meta property="og:type" content="website">
-      <meta property="og:image" content="assets/images/7fde2419-9eb0-430c-a141-2db1dce62759_car_3x4.jpeg">
+      <meta property="og:image" content="assets/things/things-hero.jpg">
       <link rel="icon" href="assets/images/57c9dc2a-3060-486c-8e61-1921abf3e60c_carw_1x1x32.png">
       <link rel="stylesheet" href="./assets/css/main.css" type="text/css">
       <link rel="stylesheet" href="./assets/css/0ed459722b839e5af4ab49df1d9ab7b41770610098.css" type="text/css">
@@ -18,10 +17,210 @@
     try {
       window.Typekit.load();
     } catch (e) {
-      console.warn(&#39;Typekit not loaded.&#39;);
+      console.warn('Typekit not loaded.');
     }
     "></script><style type="text/css">@font-face{font-family:clby;src:url(https://use.typekit.net/af/61c231/00000000000000007735d3f4/31/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/61c231/00000000000000007735d3f4/31/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/61c231/00000000000000007735d3f4/31/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:clby;src:url(https://use.typekit.net/af/d4e9cc/00000000000000007735d3e7/31/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/d4e9cc/00000000000000007735d3e7/31/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/d4e9cc/00000000000000007735d3e7/31/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:ftnk;src:url(https://use.typekit.net/af/9c3000/000000000000000077586b5e/31/l?subset_id=2&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/9c3000/000000000000000077586b5e/31/d?subset_id=2&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/9c3000/000000000000000077586b5e/31/a?subset_id=2&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:ftnk;src:url(https://use.typekit.net/af/26b618/000000000000000077586b59/31/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/26b618/000000000000000077586b59/31/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/26b618/000000000000000077586b59/31/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:ftnk;src:url(https://use.typekit.net/af/361f51/000000000000000077586b60/31/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/361f51/000000000000000077586b60/31/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/361f51/000000000000000077586b60/31/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-stretch:normal;font-display:auto;}</style>
-<style type="text/css"></style></head>
+<style type="text/css">
+.things-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding-top: 0;
+}
+.things-grid .things-item {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+.things-grid .things-item::before {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+.things-grid .things-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.things-grid .things-item:hover img {
+  transform: scale(1.03);
+}
+.things-grid .things-item .things-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(34, 34, 34, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+.things-grid .things-item .things-caption span {
+  color: #fff;
+  font-family: ftnk;
+  font-size: 15px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  padding: 8%;
+  line-height: 1.4;
+}
+.things-grid .things-item:hover .things-caption {
+  opacity: 1;
+}
+.things-lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  background: rgba(255,255,255,0.96);
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+.things-lightbox.active {
+  display: flex;
+}
+.things-lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+.things-lightbox .things-lb-close {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 10002;
+}
+.things-lightbox .things-lb-close::before,
+.things-lightbox .things-lb-close::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 2px;
+  background: #282828;
+}
+.things-lightbox .things-lb-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.things-lightbox .things-lb-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.things-lightbox .things-lb-nav {
+  position: fixed;
+  top: 0;
+  width: 15%;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  z-index: 10001;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.things-lightbox .things-lb-nav:hover {
+  opacity: 1;
+}
+.things-lightbox .things-lb-prev {
+  left: 0;
+  justify-content: flex-start;
+  padding-left: 24px;
+}
+.things-lightbox .things-lb-next {
+  right: 0;
+  justify-content: flex-end;
+  padding-right: 24px;
+}
+.things-lightbox .things-lb-nav svg {
+  width: 40px;
+  height: 40px;
+}
+.things-lightbox .things-lb-nav svg circle {
+  fill: #696969;
+  opacity: 0.2;
+}
+.things-lightbox .things-lb-nav:hover svg circle {
+  opacity: 0.4;
+}
+.things-lightbox .things-lb-nav svg path {
+  fill: #fff;
+}
+@media (max-width: 932px) {
+  .things-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+}
+@media (max-width: 540px) {
+  .things-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+}
+</style>
+<style id="hero-nav-white">
+  /* Top-of-page over dark hero — make header transparent and invert text/icons */
+  .site-header:not(.on-scroll) {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border-bottom: none !important;
+  }
+  .site-header:not(.on-scroll) .gallery-title a,
+  .site-header:not(.on-scroll) .page-title a,
+  .site-header:not(.on-scroll) .logo a,
+  .site-header:not(.on-scroll) .logo .logo-text {
+    color: #fff !important;
+  }
+  .site-header:not(.on-scroll) .gallery-title a:hover,
+  .site-header:not(.on-scroll) .page-title a:hover,
+  .site-header:not(.on-scroll) .logo a:hover {
+    color: #fff !important;
+    opacity: 0.75;
+  }
+  .site-header:not(.on-scroll) .pf-nav-social svg,
+  .site-header:not(.on-scroll) .pf-nav-social svg path {
+    fill: #fff !important;
+  }
+  .site-header:not(.on-scroll) .hamburger i {
+    background-color: #fff !important;
+  }
+  /* Pull masthead up under the fixed header so transparent nav sees hero, not body bg */
+  .header-placeholder { display: none !important; }
+
+  /* Force all masthead text to white (overrides .main-text default gray) */
+  .masthead-text,
+  .masthead-text p,
+  .masthead-text h1, .masthead-text h2, .masthead-text h3,
+  .masthead-text span {
+    color: #fff !important;
+  }
+
+  /* Down-arrow at masthead bottom is drawn with CSS borders — invert to white */
+  .masthead-arrow {
+    border-bottom-color: #fff !important;
+    border-right-color: #fff !important;
+  }
+
+</style>
+</head>
   <body class="link-transition">  <div class="page-background-video page-background-video-with-panel">
   </div>
   <div class="js-responsive-nav">
@@ -30,10 +229,10 @@
         <div class="close-responsive-button"></div>
       </div>
           <nav class="nav-container" data-hover-hint="nav" data-hover-hint-placement="bottom-start">
-                <div class="gallery-title"><a href="index.html" class="active">Works</a></div>
+                <div class="gallery-title"><a href="index.html" class="active">Things</a></div>
+                <div class="gallery-title"><a href="Works.html">Works</a></div>
                 <div class="gallery-title"><a href="Gallery.html">Gallery</a></div>
                 <div class="gallery-title"><a href="Books.html">Books</a></div>
-                <div class="gallery-title"><a href="Things.html">Things</a></div>
       <div class="page-title">
         <a href="Me.html">Me</a>
       </div>
@@ -41,8 +240,8 @@
         <div class="social pf-nav-social" data-context="theme.nav" data-hover-hint="navSocialIcons" data-hover-hint-placement="bottom-start">
           <ul>
                   <li>
-                    <a href="https://www.linkedin.com/in/hoog" target="_blank">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                    <a href="https://www.linkedin.com/in/hoog" target="_blank" rel="noopener noreferrer">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
                       <path id="path-1_24_" d="M19.6,19v-5.8c0-1.4-0.5-2.4-1.7-2.4c-1,0-1.5,0.7-1.8,1.3C16,12.3,16,12.6,16,13v6h-3.4
                         c0,0,0.1-9.8,0-10.8H16v1.5c0,0,0,0,0,0h0v0C16.4,9,17.2,7.9,19,7.9c2.3,0,4,1.5,4,4.9V19H19.6z M8.9,6.7L8.9,6.7
                         C7.7,6.7,7,5.9,7,4.9C7,3.8,7.8,3,8.9,3s1.9,0.8,1.9,1.9C10.9,5.9,10.1,6.7,8.9,6.7z M10.6,19H7.2V8.2h3.4V19z"></path>
@@ -50,8 +249,8 @@
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.instagram.com/mlikeasong/" target="_blank">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                    <a href="https://www.instagram.com/mlikeasong/" target="_blank" rel="noopener noreferrer">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
                       <g>
                         <path d="M15,5.4c2.1,0,2.4,0,3.2,0c0.8,0,1.2,0.2,1.5,0.3c0.4,0.1,0.6,0.3,0.9,0.6c0.3,0.3,0.5,0.5,0.6,0.9
                           c0.1,0.3,0.2,0.7,0.3,1.5c0,0.8,0,1.1,0,3.2s0,2.4,0,3.2c0,0.8-0.2,1.2-0.3,1.5c-0.1,0.4-0.3,0.6-0.6,0.9c-0.3,0.3-0.5,0.5-0.9,0.6
@@ -70,8 +269,8 @@
                     </a>
                   </li>
                   <li>
-                    <a href="https://500px.com/p/mlikeasong?view=photos" target="_blank">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                    <a href="https://500px.com/p/mlikeasong?view=photos" target="_blank" rel="noopener noreferrer">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
                       <path d="M11,14.5c0,0,0.1,0.2,0.1,0.4c0.3,0.6,0.6,1.2,1.1,1.7c0.5,0.5,1,0.9,1.7,1.1c0.6,0.3,1.3,0.4,2,0.4c0.7,0,1.4-0.1,2-0.4
                         c0.6-0.3,1.2-0.6,1.7-1.1c0.5-0.5,0.9-1,1.1-1.7c0.3-0.6,0.4-1.3,0.4-2c0-0.7-0.1-1.4-0.4-2c-0.3-0.6-0.6-1.2-1.1-1.7
                         c-0.5-0.5-1-0.9-1.7-1.1c-0.6-0.3-1.3-0.4-2-0.4c-0.7,0-1.4,0.1-2.1,0.4c-0.5,0.2-1.4,0.8-1.9,1.3l0,0V5l7.2,0
@@ -96,7 +295,7 @@
                   </li>
                   <li>
                     <a href="mailto:zivzhu@gmail.com">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
                         <g>
                           <path d="M15,13L7.1,7.1c0-0.5,0.4-1,1-1h13.8c0.5,0,1,0.4,1,1L15,13z M15,14.8l7.9-5.9v8.1c0,0.5-0.4,1-1,1H8.1c-0.5,0-1-0.4-1-1 V8.8L15,14.8z"></path>
                         </g>
@@ -107,12 +306,12 @@
         </div>
     </div>
   </div>
-    <header class="site-header js-site-header js-fixed-nav on-scroll" data-context="theme.nav" data-hover-hint="nav" data-hover-hint-placement="top-start">
+    <header class="site-header js-site-header js-fixed-nav" data-context="theme.nav" data-hover-hint="nav" data-hover-hint-placement="top-start">
         <nav class="nav-container" data-hover-hint="nav" data-hover-hint-placement="bottom-start">
-                <div class="gallery-title"><a href="index.html" class="active">Works</a></div>
+                <div class="gallery-title"><a href="index.html" class="active">Things</a></div>
+                <div class="gallery-title"><a href="Works.html">Works</a></div>
                 <div class="gallery-title"><a href="Gallery.html">Gallery</a></div>
                 <div class="gallery-title"><a href="Books.html">Books</a></div>
-                <div class="gallery-title"><a href="Things.html">Things</a></div>
       <div class="page-title">
         <a href="Me.html">Me</a>
       </div>
@@ -126,8 +325,8 @@
         <div class="social pf-nav-social" data-context="theme.nav" data-hover-hint="navSocialIcons" data-hover-hint-placement="bottom-start">
           <ul>
                   <li>
-                    <a href="https://www.linkedin.com/in/hoog" target="_blank">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                    <a href="https://www.linkedin.com/in/hoog" target="_blank" rel="noopener noreferrer">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
                       <path id="path-1_24_" d="M19.6,19v-5.8c0-1.4-0.5-2.4-1.7-2.4c-1,0-1.5,0.7-1.8,1.3C16,12.3,16,12.6,16,13v6h-3.4
                         c0,0,0.1-9.8,0-10.8H16v1.5c0,0,0,0,0,0h0v0C16.4,9,17.2,7.9,19,7.9c2.3,0,4,1.5,4,4.9V19H19.6z M8.9,6.7L8.9,6.7
                         C7.7,6.7,7,5.9,7,4.9C7,3.8,7.8,3,8.9,3s1.9,0.8,1.9,1.9C10.9,5.9,10.1,6.7,8.9,6.7z M10.6,19H7.2V8.2h3.4V19z"></path>
@@ -135,8 +334,8 @@
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.instagram.com/mlikeasong/" target="_blank">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                    <a href="https://www.instagram.com/mlikeasong/" target="_blank" rel="noopener noreferrer">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
                       <g>
                         <path d="M15,5.4c2.1,0,2.4,0,3.2,0c0.8,0,1.2,0.2,1.5,0.3c0.4,0.1,0.6,0.3,0.9,0.6c0.3,0.3,0.5,0.5,0.6,0.9
                           c0.1,0.3,0.2,0.7,0.3,1.5c0,0.8,0,1.1,0,3.2s0,2.4,0,3.2c0,0.8-0.2,1.2-0.3,1.5c-0.1,0.4-0.3,0.6-0.6,0.9c-0.3,0.3-0.5,0.5-0.9,0.6
@@ -155,8 +354,8 @@
                     </a>
                   </li>
                   <li>
-                    <a href="https://500px.com/p/mlikeasong?view=photos" target="_blank">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                    <a href="https://500px.com/p/mlikeasong?view=photos" target="_blank" rel="noopener noreferrer">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
                       <path d="M11,14.5c0,0,0.1,0.2,0.1,0.4c0.3,0.6,0.6,1.2,1.1,1.7c0.5,0.5,1,0.9,1.7,1.1c0.6,0.3,1.3,0.4,2,0.4c0.7,0,1.4-0.1,2-0.4
                         c0.6-0.3,1.2-0.6,1.7-1.1c0.5-0.5,0.9-1,1.1-1.7c0.3-0.6,0.4-1.3,0.4-2c0-0.7-0.1-1.4-0.4-2c-0.3-0.6-0.6-1.2-1.1-1.7
                         c-0.5-0.5-1-0.9-1.7-1.1c-0.6-0.3-1.3-0.4-2-0.4c-0.7,0-1.4,0.1-2.1,0.4c-0.5,0.2-1.4,0.8-1.9,1.3l0,0V5l7.2,0
@@ -181,7 +380,7 @@
                   </li>
                   <li>
                     <a href="mailto:zivzhu@gmail.com">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
                         <g>
                           <path d="M15,13L7.1,7.1c0-0.5,0.4-1,1-1h13.8c0.5,0,1,0.4,1,1L15,13z M15,14.8l7.9-5.9v8.1c0,0.5-0.4,1-1,1H8.1c-0.5,0-1-0.4-1-1 V8.8L15,14.8z"></path>
                         </g>
@@ -199,17 +398,27 @@
         </div>
     </header>
     <div class="header-placeholder"></div>
-        <div class="masthead" data-context="page.masthead" data-hover-hint="mastheadOptions" data-hover-hint-placement="top-start">
+        <!-- ============================================================ -->
+        <!-- SCAFFOLD: page hero masthead. To customize:                  -->
+        <!--   1. Replace the placeholder bg color below with a real      -->
+        <!--      hero image: change inline style on .masthead from       -->
+        <!--      `background-color: #e8e6e0;` to                         -->
+        <!--      `background-image: url('./assets/images/hero-XXX.jpg');`-->
+        <!--   2. Edit the h1 text and (optional) subtitle below.         -->
+        <!--   3. If text becomes hard to read against your image, add    -->
+        <!--      an overlay class or text-shadow on the masthead-text.   -->
+        <!-- ============================================================ -->
+        <div class="masthead" data-context="page.masthead" data-hover-hint="mastheadOptions" data-hover-hint-placement="top-start"
+             style="height: 85vh; background-image: url('./assets/things/things-hero.jpg'); background-color: #333; background-size: cover; background-position: center; box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.25);">
           <div class="masthead-contents">
-            <div class="masthead-text js-masthead-text">
-              <div data-context="page.masthead" data-hover-hint="mastheadTitle"><h1 decorator="inlineTextEditable" contenteditable="false" class="js-inline-text-editable preserve-whitespace main-text rich-text module-text" data-text-keypath="customizations.masthead.title.text" value="Storyteller. Creator &amp; Maker. Designer.">Storyteller. Creator &amp; Maker. Designer.</h1></div>
-              <div data-context="page.masthead" data-hover-hint="mastheadText"><p decorator="inlineTextEditable" contenteditable="false" class="js-inline-text-editable preserve-whitespace main-text rich-text module-text" data-text-keypath="page.masthead.text.text" value="Now in my 5th year in Singapore, after 19 years in Beijing.">Now in my 5th year in Singapore, after 19 years in Beijing.</p></div>
-              <div class="masthead-buttons">
-                
+            <div class="masthead-text js-masthead-text" style="color: #fff">
+              <div data-context="page.masthead" data-hover-hint="mastheadTitle"><h1 class="preserve-whitespace main-text rich-text module-text">Experience makes me real.</h1></div>
+              <div data-context="page.masthead"><p class="preserve-whitespace main-text rich-text module-text">Things I've made and things I've kept.</p></div>
+
+              <div class="masthead-buttons"></div>
+              <div class="masthead-arrow-container js-masthead-arrow" data-context="page.masthead" data-hover-hint="scrollDownArrow">
+                <div class="masthead-arrow"></div>
               </div>
-                <div class="masthead-arrow-container js-masthead-arrow" data-context="page.masthead" data-hover-hint="scrollDownArrow">
-                  <div class="masthead-arrow"></div>
-                </div>
             </div>
           </div>
         </div>
@@ -217,215 +426,43 @@
     <div class="site-container">
       <div class="site-content e2e-site-content">
         <main>
-          <section class="project-covers" data-context="page.gallery.covers">
-          <a class="project-cover js-project-cover-touch hold-space" href="WorksLazada.html" data-context="pages" data-hover-hint="galleryPageCover">
-            <div class="cover-content-container">
-              <div class="cover-image-wrap">
-                <div class="cover-image">
-                    <div class="cover cover-normal">
-
-            <img class="cover__img js-lazy image-loaded" src="./assets/images/laz1-web.webp" alt="Lazada">
-                              </div>
-                </div>
-              </div>
-              <div class="details-wrap">
-                <div class="details">
-                  <div class="details-inner">
-                      <div class="title preserve-whitespace">Lazada</div>
-                      <div class="date">2025</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a class="project-cover js-project-cover-touch hold-space" href="WorksBrand.html" data-context="pages" data-hover-hint="galleryPageCover">
-            <div class="cover-content-container">
-              <div class="cover-image-wrap">
-                <div class="cover-image">
-                    <div class="cover cover-normal">
-
-            <img class="cover__img js-lazy image-loaded" src="./assets/images/brand1-web.webp" alt="Brand Design">
-                              </div>
-                </div>
-              </div>
-              <div class="details-wrap">
-                <div class="details">
-                  <div class="details-inner">
-                      <div class="title preserve-whitespace">Brand Design</div>
-                      <div class="date">2024-2026</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a class="project-cover js-project-cover-touch hold-space" href="WorksAI.html" data-context="pages" data-hover-hint="galleryPageCover">
-            <div class="cover-content-container">
-              <div class="cover-image-wrap">
-                <div class="cover-image">
-                    <div class="cover cover-normal">
-
-            <img class="cover__img js-lazy image-loaded" src="./assets/images/a01-web.webp" alt="AI × Design">
-                              </div>
-                </div>
-              </div>
-              <div class="details-wrap">
-                <div class="details">
-                  <div class="details-inner">
-                      <div class="title preserve-whitespace">AI × Design</div>
-                      <div class="date">2023-2026</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a class="project-cover js-project-cover-touch hold-space" href="WorksD20.html" data-context="pages" data-identity="id:p68b2f6fb53a27cff813abf02e22d3ef793ffd60785d8f636d79b9" data-hover-hint="galleryPageCover" data-hover-hint-id="p68b2f6fb53a27cff813abf02e22d3ef793ffd60785d8f636d79b9">
-            <div class="cover-content-container">
-              <div class="cover-image-wrap">
-                <div class="cover-image">
-                    <div class="cover cover-normal">
-
-            <img class="cover__img js-lazy image-loaded" src="./assets/images/282be301-0b63-439a-9635-23aff653bf99_rwc_436x0x961x1280x961.jpg" srcset="assets/images/282be301-0b63-439a-9635-23aff653bf99_rwc_436x0x961x1280x640.jpg 640w, assets/images/282be301-0b63-439a-9635-23aff653bf99_rwc_436x0x961x1280x1280.jpg 1280w, assets/images/282be301-0b63-439a-9635-23aff653bf99_rwc_436x0x961x1280x1366.jpg 1366w, assets/images/282be301-0b63-439a-9635-23aff653bf99_rwc_436x0x961x1280x1920.jpg 1920w, assets/images/282be301-0b63-439a-9635-23aff653bf99_rwc_436x0x961x1280x961.jpg 2560w, assets/images/282be301-0b63-439a-9635-23aff653bf99_rwc_436x0x961x1280x961.jpg 5120w" sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 3)">
-                              </div>
-                </div>
-              </div>
-              <div class="details-wrap">
-                <div class="details">
-                  <div class="details-inner">
-                      <div class="title preserve-whitespace">D20 Exhibition</div>
-                      <div class="date">2025</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a class="project-cover js-project-cover-touch hold-space" href="WorksXiaomi.html" data-context="pages" data-hover-hint="galleryPageCover">
-            <div class="cover-content-container">
-              <div class="cover-image-wrap">
-                <div class="cover-image">
-                    <div class="cover cover-normal">
-
-            <img class="cover__img js-lazy image-loaded" src="./assets/images/miui1.png" alt="Xiaomi International">
-                              </div>
-                </div>
-              </div>
-              <div class="details-wrap">
-                <div class="details">
-                  <div class="details-inner">
-                      <div class="title preserve-whitespace">Xiaomi International</div>
-                      <div class="date">2020-2021</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a class="project-cover js-project-cover-touch hold-space" href="WorksWatch.html" data-context="pages" data-hover-hint="galleryPageCover">
-            <div class="cover-content-container">
-              <div class="cover-image-wrap">
-                <div class="cover-image">
-                    <div class="cover cover-normal">
-
-            <img class="cover__img js-lazy image-loaded" src="./assets/images/w2-web.webp" alt="Watch Design">
-                              </div>
-                </div>
-              </div>
-              <div class="details-wrap">
-                <div class="details">
-                  <div class="details-inner">
-                      <div class="title preserve-whitespace">Watch Design</div>
-                      <div class="date">2018</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a class="project-cover js-project-cover-touch hold-space" href="WorksMonster.html" data-context="pages" data-identity="id:p68b475074efe63d57bca953d3e780e98f265cb62db0b6d9bc93d0" data-hover-hint="galleryPageCover" data-hover-hint-id="p68b475074efe63d57bca953d3e780e98f265cb62db0b6d9bc93d0">
-            <div class="cover-content-container">
-              <div class="cover-image-wrap">
-                <div class="cover-image">
-                    <div class="cover cover-normal">
-
-            <img class="cover__img js-lazy image-loaded" src="./assets/images/47a1a885-b40b-4e2f-8c56-819268a10e56_car_3x4.JPG" srcset="assets/images/47a1a885-b40b-4e2f-8c56-819268a10e56_carw_3x4x640.JPG 640w, assets/images/47a1a885-b40b-4e2f-8c56-819268a10e56_carw_3x4x1280.JPG 1280w, assets/images/47a1a885-b40b-4e2f-8c56-819268a10e56_carw_3x4x1366.JPG 1366w, assets/images/47a1a885-b40b-4e2f-8c56-819268a10e56_carw_3x4x1920.JPG 1920w, assets/images/47a1a885-b40b-4e2f-8c56-819268a10e56_carw_3x4x2560.JPG 2560w, assets/images/47a1a885-b40b-4e2f-8c56-819268a10e56_carw_3x4x5120.JPG 5120w" sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 3)">
-                              </div>
-                </div>
-              </div>
-              <div class="details-wrap">
-                <div class="details">
-                  <div class="details-inner">
-                      <div class="title preserve-whitespace">Monster Vending</div>
-                      <div class="date">2017</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a class="project-cover js-project-cover-touch hold-space" href="WorksCuijian.html" data-context="pages" data-identity="id:p68baa96cc17a8f058faf3e2dccf2aba33d4aff3202ddca78981f2" data-hover-hint="galleryPageCover" data-hover-hint-id="p68baa96cc17a8f058faf3e2dccf2aba33d4aff3202ddca78981f2">
-            <div class="cover-content-container">
-              <div class="cover-image-wrap">
-                <div class="cover-image">
-                    <div class="cover cover-normal">
-
-            <img class="cover__img js-lazy image-loaded" src="./assets/images/ac8c6ded-c387-4050-a9a4-78f908215bfe_car_3x4.jpg" srcset="assets/images/ac8c6ded-c387-4050-a9a4-78f908215bfe_carw_3x4x640.jpg 640w, assets/images/ac8c6ded-c387-4050-a9a4-78f908215bfe_carw_3x4x1280.jpg 1280w, assets/images/ac8c6ded-c387-4050-a9a4-78f908215bfe_carw_3x4x1366.jpg 1366w, assets/images/ac8c6ded-c387-4050-a9a4-78f908215bfe_carw_3x4x1920.jpg 1920w, assets/images/ac8c6ded-c387-4050-a9a4-78f908215bfe_carw_3x4x2560.jpg 2560w, assets/images/ac8c6ded-c387-4050-a9a4-78f908215bfe_carw_3x4x5120.jpg 5120w" sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 3)">
-                              </div>
-                </div>
-              </div>
-              <div class="details-wrap">
-                <div class="details">
-                  <div class="details-inner">
-                      <div class="title preserve-whitespace">Cuijian iOS App</div>
-                      <div class="date">2016</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a class="project-cover js-project-cover-touch hold-space" href="WorksXiqi.html" data-context="pages" data-identity="id:p68bab07358642a72fedca4c60f648ab65dc2d72345f9102a91c95" data-hover-hint="galleryPageCover" data-hover-hint-id="p68bab07358642a72fedca4c60f648ab65dc2d72345f9102a91c95">
-            <div class="cover-content-container">
-              <div class="cover-image-wrap">
-                <div class="cover-image">
-                    <div class="cover cover-normal">
-
-            <img class="cover__img js-lazy image-loaded" src="./assets/images/110d9f02-6bf9-484d-b4df-8180b3a9d793_rwc_616x0x934x1245x934.png" srcset="assets/images/110d9f02-6bf9-484d-b4df-8180b3a9d793_rwc_616x0x934x1245x640.png 640w, assets/images/110d9f02-6bf9-484d-b4df-8180b3a9d793_rwc_616x0x934x1245x1280.png 1280w, assets/images/110d9f02-6bf9-484d-b4df-8180b3a9d793_rwc_616x0x934x1245x1366.png 1366w, assets/images/110d9f02-6bf9-484d-b4df-8180b3a9d793_rwc_616x0x934x1245x1920.png 1920w, assets/images/110d9f02-6bf9-484d-b4df-8180b3a9d793_rwc_616x0x934x1245x934.png 2560w, assets/images/110d9f02-6bf9-484d-b4df-8180b3a9d793_rwc_616x0x934x1245x934.png 5120w" sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 3)">
-                              </div>
-                </div>
-              </div>
-              <div class="details-wrap">
-                <div class="details">
-                  <div class="details-inner">
-                      <div class="title preserve-whitespace">XiQi Art App</div>
-                      <div class="date">2014</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a class="project-cover js-project-cover-touch hold-space" href="WorksMicrosoft.html" data-context="pages" data-hover-hint="galleryPageCover">
-            <div class="cover-content-container">
-              <div class="cover-image-wrap">
-                <div class="cover-image">
-                    <div class="cover cover-normal">
-
-            <img class="cover__img js-lazy image-loaded" src="./assets/images/m0-web.webp" alt="Microsoft">
-                              </div>
-                </div>
-              </div>
-              <div class="details-wrap">
-                <div class="details">
-                  <div class="details-inner">
-                      <div class="title preserve-whitespace">Microsoft</div>
-                      <div class="date">2012-2015</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          </section>
+          <div class="things-grid">
+            <div class="things-item" data-index="0"><img src="./assets/things/things-03.jpg" alt=""><div class="things-caption"><span>Ceramic Piece</span></div></div>
+            <div class="things-item" data-index="1"><img src="./assets/things/things-06.jpg" alt=""><div class="things-caption"><span>Old Map</span></div></div>
+            <div class="things-item" data-index="2"><img src="./assets/things/things-07.jpg" alt=""><div class="things-caption"><span>Leather Case</span></div></div>
+            <div class="things-item" data-index="3"><img src="./assets/things/things-08.jpg" alt=""><div class="things-caption"><span>Film Camera</span></div></div>
+            <div class="things-item" data-index="4"><img loading="lazy" src="./assets/things/things-25.jpg" alt=""><div class="things-caption"><span>Wax Seal</span></div></div>
+            <div class="things-item" data-index="5"><img loading="lazy" src="./assets/things/things-09.jpg" alt=""><div class="things-caption"><span>Ink Stamp</span></div></div>
+            <div class="things-item" data-index="6"><img loading="lazy" src="./assets/things/things-10.jpg" alt=""><div class="things-caption"><span>Vinyl Record</span></div></div>
+            <div class="things-item" data-index="7"><img loading="lazy" src="./assets/things/things-11.jpg" alt=""><div class="things-caption"><span>Wooden Box</span></div></div>
+            <div class="things-item" data-index="8"><img loading="lazy" src="./assets/things/things-13.jpg" alt=""><div class="things-caption"><span>Postcard</span></div></div>
+            <div class="things-item" data-index="9"><img loading="lazy" src="./assets/things/things-14.jpg" alt=""><div class="things-caption"><span>Stone Weight</span></div></div>
+            <div class="things-item" data-index="10"><img loading="lazy" src="./assets/things/things-15.jpg" alt=""><div class="things-caption"><span>Woven Cloth</span></div></div>
+            <div class="things-item" data-index="11"><img loading="lazy" src="./assets/things/things-16.jpg" alt=""><div class="things-caption"><span>Tin Box</span></div></div>
+            <div class="things-item" data-index="12"><img loading="lazy" src="./assets/things/things-17.jpg" alt=""><div class="things-caption"><span>Compass</span></div></div>
+            <div class="things-item" data-index="13"><img loading="lazy" src="./assets/things/things-18.jpg" alt=""><div class="things-caption"><span>Paper Clip</span></div></div>
+            <div class="things-item" data-index="14"><img loading="lazy" src="./assets/things/things-19.jpg" alt=""><div class="things-caption"><span>Key Ring</span></div></div>
+            <div class="things-item" data-index="15"><img loading="lazy" src="./assets/things/things-21.jpg" alt=""><div class="things-caption"><span>Iron Hook</span></div></div>
+            <div class="things-item" data-index="16"><img loading="lazy" src="./assets/things/things-22.jpg" alt=""><div class="things-caption"><span>Silk Ribbon</span></div></div>
+            <div class="things-item" data-index="17"><img loading="lazy" src="./assets/things/things-23.jpg" alt=""><div class="things-caption"><span>Copper Coin</span></div></div>
+            <div class="things-item" data-index="18"><img loading="lazy" src="./assets/things/things-24.jpg" alt=""><div class="things-caption"><span>Sketch Book</span></div></div>
+            <div class="things-item" data-index="19"><img loading="lazy" src="./assets/things/things-26.jpg" alt=""><div class="things-caption"><span>Resin Block</span></div></div>
+            <div class="things-item" data-index="20"><img loading="lazy" src="./assets/things/things-27.jpg" alt=""><div class="things-caption"><span>Thread Spool</span></div></div>
+            <div class="things-item" data-index="21"><img loading="lazy" src="./assets/things/things-35.jpg" alt=""><div class="things-caption"><span>Cork Piece</span></div></div>
+            <div class="things-item" data-index="22"><img loading="lazy" src="./assets/things/things-31.jpg" alt=""><div class="things-caption"><span>Enamel Pin</span></div></div>
+            <div class="things-item" data-index="23"><img loading="lazy" src="./assets/things/things-33.jpg" alt=""><div class="things-caption"><span>Tape Roll</span></div></div>
+            <div class="things-item" data-index="24"><img loading="lazy" src="./assets/things/things-30.jpg" alt=""><div class="things-caption"><span>Snow Globe</span></div></div>
+            <div class="things-item" data-index="25"><img loading="lazy" src="./assets/things/things-36.jpg" alt=""><div class="things-caption"><span>Feather Pen</span></div></div>
+            <div class="things-item" data-index="26"><img loading="lazy" src="./assets/things/things-37.jpg" alt=""><div class="things-caption"><span>Jade Stone</span></div></div>
+          
+          
+          </div>
               <footer class="site-footer" data-hover-hint="footer">
-                  <div class="footer-tagline">I can always surprise you</div>
                   <div class="social pf-footer-social" data-context="theme.footer" data-hover-hint="footerSocialIcons">
                     <ul>
                             <li>
-                              <a href="https://www.linkedin.com/in/hoog" target="_blank">
-                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                              <a href="https://www.linkedin.com/in/hoog" target="_blank" rel="noopener noreferrer">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
                                 <path id="path-1_24_" d="M19.6,19v-5.8c0-1.4-0.5-2.4-1.7-2.4c-1,0-1.5,0.7-1.8,1.3C16,12.3,16,12.6,16,13v6h-3.4
                                   c0,0,0.1-9.8,0-10.8H16v1.5c0,0,0,0,0,0h0v0C16.4,9,17.2,7.9,19,7.9c2.3,0,4,1.5,4,4.9V19H19.6z M8.9,6.7L8.9,6.7
                                   C7.7,6.7,7,5.9,7,4.9C7,3.8,7.8,3,8.9,3s1.9,0.8,1.9,1.9C10.9,5.9,10.1,6.7,8.9,6.7z M10.6,19H7.2V8.2h3.4V19z"></path>
@@ -433,8 +470,8 @@
                               </a>
                             </li>
                             <li>
-                              <a href="https://www.instagram.com/mlikeasong/" target="_blank">
-                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                              <a href="https://www.instagram.com/mlikeasong/" target="_blank" rel="noopener noreferrer">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
                                 <g>
                                   <path d="M15,5.4c2.1,0,2.4,0,3.2,0c0.8,0,1.2,0.2,1.5,0.3c0.4,0.1,0.6,0.3,0.9,0.6c0.3,0.3,0.5,0.5,0.6,0.9
                                     c0.1,0.3,0.2,0.7,0.3,1.5c0,0.8,0,1.1,0,3.2s0,2.4,0,3.2c0,0.8-0.2,1.2-0.3,1.5c-0.1,0.4-0.3,0.6-0.6,0.9c-0.3,0.3-0.5,0.5-0.9,0.6
@@ -453,8 +490,8 @@
                               </a>
                             </li>
                             <li>
-                              <a href="https://500px.com/p/mlikeasong?view=photos" target="_blank">
-                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                              <a href="https://500px.com/p/mlikeasong?view=photos" target="_blank" rel="noopener noreferrer">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
                                 <path d="M11,14.5c0,0,0.1,0.2,0.1,0.4c0.3,0.6,0.6,1.2,1.1,1.7c0.5,0.5,1,0.9,1.7,1.1c0.6,0.3,1.3,0.4,2,0.4c0.7,0,1.4-0.1,2-0.4
                                   c0.6-0.3,1.2-0.6,1.7-1.1c0.5-0.5,0.9-1,1.1-1.7c0.3-0.6,0.4-1.3,0.4-2c0-0.7-0.1-1.4-0.4-2c-0.3-0.6-0.6-1.2-1.1-1.7
                                   c-0.5-0.5-1-0.9-1.7-1.1c-0.6-0.3-1.3-0.4-2-0.4c-0.7,0-1.4,0.1-2.1,0.4c-0.5,0.2-1.4,0.8-1.9,1.3l0,0V5l7.2,0
@@ -479,7 +516,7 @@
                             </li>
                             <li>
                               <a href="mailto:zivzhu@gmail.com">
-                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
                                   <g>
                                     <path d="M15,13L7.1,7.1c0-0.5,0.4-1,1-1h13.8c0.5,0,1,0.4,1,1L15,13z M15,14.8l7.9-5.9v8.1c0,0.5-0.4,1-1,1H8.1c-0.5,0-1-0.4-1-1 V8.8L15,14.8z"></path>
                                   </g>
@@ -495,49 +532,84 @@
     </div>
   </div>
 
+  <div class="things-lightbox" id="thingsLightbox">
+    <div class="things-lb-close" id="thingsLbClose"></div>
+    <div class="things-lb-nav things-lb-prev" id="thingsLbPrev">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+        <circle cx="30" cy="30" r="30"></circle>
+        <path d="M36.8,36.4L30.3,30l6.5-6.4l-3.5-3.4l-10,9.8l10,9.8L36.8,36.4z"></path>
+      </svg>
+    </div>
+    <div class="things-lb-nav things-lb-next" id="thingsLbNext">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+        <circle cx="30" cy="30" r="30"></circle>
+        <path d="M24.2,23.5l6.6,6.5l-6.6,6.5l3.6,3.5L37.8,30l-10.1-9.9L24.2,23.5z"></path>
+      </svg>
+    </div>
+    <img id="thingsLbImg" src="" alt="">
+  </div>
+
 <script type="text/javascript">
-  // fix for Safari's back/forward cache
   window.onpageshow = function(e) {
     if (e.persisted) { window.location.reload(); }
   };
 </script>
-  <script type="text/javascript">var __config__ = {"page_id":"p68b2f65112bd34c8f2a7a409946d6ab5785b47679bfca0695ae8e","theme":{"name":"marta\/tom"},"pageTransition":true,"linkTransition":true,"disableDownload":false,"localizedValidationMessages":{"required":"This field is required","Email":"This field must be a valid email address"},"lightbox":{"enabled":true,"color":{"opacity":0.94,"hex":"#fff"}},"cookie_banner":{"enabled":false}};</script>
+  <script type="text/javascript">var __config__ = {"page_id":"things","theme":{"name":"marta\/tom"},"pageTransition":true,"linkTransition":true,"disableDownload":false,"localizedValidationMessages":{"required":"This field is required","Email":"This field must be a valid email address"},"lightbox":{"enabled":false},"cookie_banner":{"enabled":false}};</script>
   <script type="text/javascript" src="./assets/js/translations.js"></script>
-  <script type="text/javascript" src="./assets/js/main.js"></script><div class="js-lightbox-wrap offscreen" id="lightbox-wrap">
-    
-  <div class="js-blocking" id="lightbox-blocking">
-    <span class="lightbox-spinner"></span>
-  </div>
+  <script type="text/javascript" src="./assets/js/main.js"></script>
 
-    <div class="js-lightbox-inner-wrap" id="lightbox-inner-wrap">
-      <div class="js-img-wrap" id="lightbox-img-wrap">
-        
-  <div class="lightbox-extra control prev js-control js-prev">
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="60" height="60" viewBox="0 0 60 60" xml:space="preserve">
-      <circle class="lightbox-icon-bg" cx="30" cy="30" r="30"></circle>
-      <path class="lightbox-icon-arrow" d="M36.8,36.4L30.3,30l6.5-6.4l-3.5-3.4l-10,9.8l10,9.8L36.8,36.4z"></path>
-    </svg>
-  </div>
+<script>
+(function() {
+  var items = document.querySelectorAll('.things-item');
+  var lightbox = document.getElementById('thingsLightbox');
+  var lbImg = document.getElementById('thingsLbImg');
+  var total = items.length;
+  var current = 0;
 
-        
-  <div class="lightbox-extra control next js-control js-next">
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="60" height="60" viewBox="0 0 60 60" xml:space="preserve">
-      <circle class="lightbox-icon-bg" cx="30" cy="30" r="30"></circle>
-      <path class="lightbox-icon-arrow" d="M24.2,23.5l6.6,6.5l-6.6,6.5l3.6,3.5L37.8,30l-10.1-9.9L24.2,23.5z"></path>
-    </svg>
-  </div>
+  function show(i) {
+    current = i;
+    lbImg.src = items[i].querySelector('img').src;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
 
-        
-  <div class="lightbox-extra control close js-control js-close">
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
-      <circle class="lightbox-icon-bg" cx="50" cy="50" r="47.5"></circle>
-      <polygon class="lightbox-icon-close" points="64.5,39.8 60.2,35.5 50,45.7 39.8,35.5 35.5,39.8 45.7,50 35.5,60.2 39.8,64.5 50,54.3 60.2,64.5 64.5,60.2 54.3,50"></polygon>
-    </svg>
-  </div>
+  function hide() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
 
-        <div class="lightbox-contents js-contents"></div>
-      </div>
-    </div>
-  </div>
+  items.forEach(function(item) {
+    item.addEventListener('click', function() {
+      show(parseInt(this.getAttribute('data-index')));
+    });
+  });
+
+  document.getElementById('thingsLbClose').addEventListener('click', function(e) {
+    e.stopPropagation();
+    hide();
+  });
+
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox || e.target === lbImg) hide();
+  });
+
+  document.getElementById('thingsLbPrev').addEventListener('click', function(e) {
+    e.stopPropagation();
+    show((current - 1 + total) % total);
+  });
+
+  document.getElementById('thingsLbNext').addEventListener('click', function(e) {
+    e.stopPropagation();
+    show((current + 1) % total);
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') hide();
+    if (e.key === 'ArrowLeft') show((current - 1 + total) % total);
+    if (e.key === 'ArrowRight') show((current + 1) % total);
+  });
+})();
+</script>
 
 </body></html>
