@@ -213,126 +213,65 @@
         <div id="project-canvas" class="js-project-modules modules content">
           <div id="project-modules">
               
-              <div class="project-module module image project-module-image js-js-project-module" style="padding-top: 0;
-padding-bottom: 0;
-  width: 100%;
-">
+              <style>
+                .salon-wall {
+                  max-width: 960px;
+                  margin: 0 auto;
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
+                  gap: 40px;
+                  padding: 20px 0 60px;
+                }
+                .salon-wall .frame {
+                  background: #fff;
+                  border: 1px solid #d8d8d3;
+                  padding: 20px;
+                  box-shadow: 0 2px 12px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+                  transition: box-shadow 0.3s ease;
+                }
+                .salon-wall .frame:hover {
+                  box-shadow: 0 4px 20px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.06);
+                }
+                .salon-wall .frame img {
+                  width: 100%;
+                  height: auto;
+                  display: block;
+                  margin: 0;
+                  padding: 0;
+                }
+                .salon-wall .span-full { grid-column: 1 / -1; }
+                .salon-wall .offset-down { margin-top: 60px; }
+                .salon-wall .offset-up { margin-top: -40px; }
+                @media (max-width: 640px) {
+                  .salon-wall { grid-template-columns: 1fr; gap: 24px; padding: 12px 16px 40px; }
+                  .salon-wall .span-full { grid-column: 1; }
+                  .salon-wall .offset-down, .salon-wall .offset-up { margin-top: 0; }
+                }
+              </style>
 
-  
+              <div class="salon-wall">
 
-  
-     <div class="js-lightbox lightbox-link" data-src="assets/images/gallery-awards-02.jpg">
-           <img class="js-lazy e2e-site-project-module-image image-loaded" src="./assets/images/gallery-awards-02_rw_1920.jpg" width="1248" srcset="assets/images/gallery-awards-02_rw_600.jpg 600w,assets/images/gallery-awards-02_rw_1200.jpg 1200w,assets/images/gallery-awards-02_rw_1920.jpg 1248w," sizes="(max-width: 1248px) 100vw, 1248px">
-     </div>
-  
+                <div class="frame span-full js-lightbox lightbox-link" data-src="assets/images/gallery-awards-02_rw_1920.jpg">
+                  <img class="js-lazy" src="./assets/images/gallery-awards-02_rw_1920.jpg" alt="">
+                </div>
 
-</div>
+                <div class="frame js-lightbox lightbox-link" data-src="assets/images/gallery-awards-03_rw_1920.jpg">
+                  <img class="js-lazy" src="./assets/images/gallery-awards-03_rw_1920.jpg" alt="">
+                </div>
+                <div class="frame offset-down js-lightbox lightbox-link" data-src="assets/images/gallery-awards-04_rw_3840.JPG">
+                  <img class="js-lazy" src="./assets/images/gallery-awards-04_rw_3840.JPG" alt="">
+                </div>
 
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              <div class="project-module module image project-module-image js-js-project-module" style="padding-top: 0;
-padding-bottom: 0;
-  width: 100%;
-  max-width: 1248px;
-">
+                <div class="frame js-lightbox lightbox-link" data-src="assets/images/gallery-awards-05_rw_3840.jpg">
+                  <img class="js-lazy" src="./assets/images/gallery-awards-05_rw_3840.jpg" alt="">
+                </div>
+                <div class="frame offset-down js-lightbox lightbox-link" data-src="assets/images/gallery-awards-06_rw_3840.JPG">
+                  <img class="js-lazy" src="./assets/images/gallery-awards-06_rw_3840.JPG" alt="">
+                </div>
 
-  
+              </div>
 
-  
-     <div class="js-lightbox lightbox-link" data-src="assets/images/gallery-awards-03.jpg">
-           <img class="js-lazy e2e-site-project-module-image image-loaded" src="./assets/images/gallery-awards-03_rw_1920.jpg" width="1920" srcset="assets/images/gallery-awards-03_rw_600.jpg 600w,assets/images/gallery-awards-03_rw_1200.jpg 1200w,assets/images/gallery-awards-03_rw_1920.jpg 1920w," sizes="(max-width: 1920px) 100vw, 1920px">
-     </div>
-  
 
-</div>
-
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              <div class="project-module module image project-module-image js-js-project-module" style="padding-top: 0;
-padding-bottom: 0;
-  max-width: 1248px;
-">
-
-  
-
-  
-     <div class="js-lightbox lightbox-link" data-src="assets/images/gallery-awards-04.JPG">
-           <img class="js-lazy e2e-site-project-module-image image-loaded" src="./assets/images/gallery-awards-04_rw_3840.JPG" width="3840" srcset="assets/images/gallery-awards-04_rw_600.JPG 600w,assets/images/gallery-awards-04_rw_1200.JPG 1200w,assets/images/gallery-awards-04_rw_1920.JPG 1920w,assets/images/gallery-awards-04_rw_3840.JPG 3840w," sizes="(max-width: 3840px) 100vw, 3840px">
-     </div>
-  
-
-</div>
-
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              <div class="project-module module image project-module-image js-js-project-module" style="padding-top: 0;
-padding-bottom: 0;
-  max-width: 1248px;
-">
-
-  
-
-  
-     <div class="js-lightbox lightbox-link" data-src="assets/images/gallery-awards-05.jpg">
-           <img class="js-lazy e2e-site-project-module-image image-loaded" src="./assets/images/gallery-awards-05_rw_3840.jpg" width="3840" srcset="assets/images/gallery-awards-05_rw_600.jpg 600w,assets/images/gallery-awards-05_rw_1200.jpg 1200w,assets/images/gallery-awards-05_rw_1920.jpg 1920w,assets/images/gallery-awards-05_rw_3840.jpg 3840w," sizes="(max-width: 3840px) 100vw, 3840px">
-     </div>
-  
-
-</div>
-
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              <div class="project-module module image project-module-image js-js-project-module" style="padding-top: 0;
-padding-bottom: 0;
-  max-width: 1248px;
-">
-
-  
-
-  
-     <div class="js-lightbox lightbox-link" data-src="assets/images/gallery-awards-06.JPG">
-           <img class="js-lazy e2e-site-project-module-image image-loaded" src="./assets/images/gallery-awards-06_rw_3840.JPG" width="3840" srcset="assets/images/gallery-awards-06_rw_600.JPG 600w,assets/images/gallery-awards-06_rw_1200.JPG 1200w,assets/images/gallery-awards-06_rw_1920.JPG 1920w,assets/images/gallery-awards-06_rw_3840.JPG 3840w," sizes="(max-width: 3840px) 100vw, 3840px">
-     </div>
-  
-
-</div>
-
-              
-              
-              
-              
-              
-              
-              
-              
           </div>
         </div>
       </div>
