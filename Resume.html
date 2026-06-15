@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zhu Hong — Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page {
+    size: A4;
+    margin: 14mm 16mm;
+  }
+
+  :root {
+    --black: #111;
+    --dark: #333;
+    --gray: #777;
+    --light: #bbb;
+    --bg: #fff;
+    --red: #D62828;
+    --font: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  html { font-size: 17px; }
+
+  body {
+    font-family: var(--font);
+    color: var(--black);
+    background: var(--bg);
+    line-height: 1.4;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 40px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    padding-bottom: 20px;
+    border-bottom: 4px solid var(--black);
+    margin-bottom: 32px;
+  }
+
+  .header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .header h1 span {
+    color: var(--red);
+  }
+
+  .header .contact {
+    text-align: right;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--dark);
+    line-height: 1.6;
+  }
+
+  .header .contact a {
+    color: var(--dark);
+    text-decoration: none;
+  }
+
+  /* ===== PROFILE ===== */
+  .profile {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 32px;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--dark);
+  }
+
+  .profile::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    bottom: 2px;
+    width: 4px;
+    background: var(--red);
+  }
+
+  /* ===== SECTIONS ===== */
+  .section {
+    margin-bottom: 28px;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .section-head h2 {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .section-head::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: var(--black);
+  }
+
+  /* ===== JOB ===== */
+  .job {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 0 20px;
+    margin-bottom: 18px;
+    page-break-inside: avoid;
+  }
+
+  .job-time {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--gray);
+    padding-top: 3px;
+    line-height: 1.5;
+  }
+
+  .job-body {}
+
+  .job-title {
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 1px;
+  }
+
+  .job-org {
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: var(--gray);
+    margin-bottom: 5px;
+  }
+
+  .job-desc {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--dark);
+    margin-bottom: 5px;
+  }
+
+  .job ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .job ul li {
+    font-size: 0.8rem;
+    line-height: 1.48;
+    color: var(--dark);
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 2px;
+  }
+
+  .job ul li::before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    background: var(--red);
+  }
+
+  .job ul li strong {
+    font-weight: 600;
+  }
+
+  /* ===== COMPACT LIST ===== */
+  .compact-list {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 0 20px;
+  }
+
+  .compact-list .label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--gray);
+    padding-top: 2px;
+  }
+
+  .compact-list .value {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--dark);
+  }
+
+  .compact-list .value li {
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 2px;
+  }
+
+  .compact-list .value li::before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    background: var(--red);
+  }
+
+  .compact-list ul { list-style: none; padding: 0; }
+
+  /* ===== FOOTER GRID ===== */
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding-top: 16px;
+    border-top: 2px solid var(--black);
+    margin-top: 8px;
+  }
+
+  .footer-grid .col-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .footer-grid .col-value {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--dark);
+  }
+
+  /* ===== PRINT ===== */
+  @media print {
+    html { font-size: 12.5px; }
+    body { padding: 0; max-width: none; }
+    .job { break-inside: avoid; }
+    .section { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>ZHU<span>.</span> HONG</h1>
+  <div class="contact">
+    zivzhu@gmail.com<br>
+    <a href="https://zhuhong.me">https://zhuhong.me</a>
+  </div>
+</div>
+
+<!-- PROFILE -->
+<p class="profile">
+  Design leader with 23 years bridging physical products and digital experiences — from connected home appliances and operating systems to spatial computing and AI-driven design operations. Track record of building multidisciplinary design teams from the ground up and shaping end-to-end user journeys across hardware, software, and service. Currently leading designers across 9 countries at Lazada; previously directed international design for MIUI across smartphones and smart TVs at Xiaomi; and built Microsoft's design ecosystem across Greater China during the Windows 8/Xbox One/HoloLens era.
+</p>
+
+<!-- EXPERIENCE -->
+<div class="section">
+  <div class="section-head"><h2>Experience</h2></div>
+
+  <div class="job">
+    <div class="job-time">2021.12 –<br>Present</div>
+    <div class="job-body">
+      <div class="job-title">SVP, Head of Design</div>
+      <div class="job-org">Lazada (Alibaba Group) / Singapore</div>
+      <p class="job-desc">Lead an 80+ person multidisciplinary design organisation across 9 countries, setting experience strategy for 150M+ monthly users across web, app, and in-store retail.</p>
+      <ul>
+        <li>Built and shipped multiple in-house AI agents powering the studio's daily workflow — research synthesis, design QA, and localization across 11 markets.</li>
+        <li>Drove the Vision Pro flagship shopping experience — Lazada's first spatial-computing product, in partnership with Apple.</li>
+        <li>Led the AI + Design initiative reshaping product discovery and shopping guidance.</li>
+        <li>Partner to C-suite (CEO, CPO, CTO) on cross-org product bets and brand evolution.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="job-time">2020.03 –<br>2021.09</div>
+    <div class="job-body">
+      <div class="job-title">Head of International Internet Design</div>
+      <div class="job-org">Xiaomi / Beijing & Singapore</div>
+      <p class="job-desc">Led the international design team for MIUI, Xiaomi's flagship OS running across hundreds of millions of smartphones, smart TVs, and connected devices worldwide.</p>
+      <ul>
+        <li>Shipped international editions of MIUI 12, 12.5, and 13 — three full OS releases in 18 months.</li>
+        <li>Contributed to international adaptation of Mijia smart hardware — environmental care, floorcare, and connected appliances — where physical product, companion app, and OS work as one experience.</li>
+        <li>Contributed to the international UX of Mi TV OS, extending MIUI's design language to the living-room screen.</li>
+        <li>Owned localization across Southeast Asia, India, Russia, Europe, and Latin America — five regional design tracks in parallel.</li>
+        <li>Directed design for Xiaomi's international consumer app portfolio.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="job-time">2015.09 –<br>2020.03</div>
+    <div class="job-body">
+      <div class="job-title">Principal Experience Design Consultant</div>
+      <div class="job-org">Independent Practice / Beijing</div>
+      <p class="job-desc">Partnered with global hardware, platform, and premium consumer brands on end-to-end experiences spanning physical product, software, and service.</p>
+      <ul>
+        <li><strong>Monster Vending</strong> — service, industrial, app, and UX design for the full vending platform; concept-to-shipped consumer hardware.</li>
+        <li><strong>BMW Group / MINI Cooper</strong> — smart key system connecting iPhone, plus companion app for the MINI owner community.</li>
+        <li><strong>Microsoft HoloLens</strong> — experience reports and Greater China launch campaign; proposed a HoloLens-based in-store experience for Volkswagen's Beijing flagship.</li>
+        <li><strong>Tesla</strong> — Model X new-car experience and Autopilot road-test programme (Model S).</li>
+        <li><strong>Microsoft Bing Maps</strong> — global iOS app: creative design research and shipped execution.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="job-time">2012.02 –<br>2015.08</div>
+    <div class="job-body">
+      <div class="job-title">Senior User Experience Evangelist</div>
+      <div class="job-org">Microsoft / Beijing</div>
+      <p class="job-desc">Led Microsoft's design ecosystem strategy across Greater China — spanning Xbox One, Windows Phone, Windows 8/10, and early HoloLens.</p>
+      <ul>
+        <li>Represented Microsoft to Lenovo, HP, Dell, BenQ — co-defined Windows app experience standards with each OEM.</li>
+        <li>Trained 1,000+ designers on the Metro Design System.</li>
+        <li>UX Design Mentor, Microsoft Ventures — advised 100+ startups on smart hardware, IoT, and connected-app experiences.</li>
+        <li>Managed 24 design agencies (including Frog Design) delivering Windows app experiences.</li>
+        <li>Embedded with the HoloLens and Xbox teams on early hardware-software experience prototypes.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="job-time">2009.02 –<br>2010.11</div>
+    <div class="job-body">
+      <div class="job-title">UED Manager</div>
+      <div class="job-org">Taobao.com (Alibaba Group) / Beijing</div>
+      <p class="job-desc">Founding design leader for Taobao's Beijing studio — built the team from zero, hiring and leading 25 designers and front-end engineers. Designed and shipped the first version of Taobao Trip, the product that later evolved into Fliggy. Created the Taobao Trip brand identity.</p>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="job-time">2005.04 –<br>2008.04</div>
+    <div class="job-body">
+      <div class="job-title">Design Lead</div>
+      <div class="job-org">PCWorld Magazine (China Edition) / Beijing</div>
+      <p class="job-desc">Led design for PCWorld.com.cn — website, editorial features, and promotional mini-sites. Took on additional technical team leadership during restructuring — self-taught Linux and server administration. Long-running reviewer at the PCWorld Lab — evaluated MP3 players, Palm OS smartphones, and Windows Mobile devices through structured hardware-and-software testing; reviews published under byline.</p>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="job-time">2003.02 –<br>2005.04</div>
+    <div class="job-body">
+      <div class="job-title">UI Designer</div>
+      <div class="job-org">HatawayData / Beijing</div>
+      <p class="job-desc">Designed UI for commercial banking software — both customer-facing portals and internal banking systems.</p>
+    </div>
+  </div>
+</div>
+
+<!-- RECOGNITION -->
+<div class="section">
+  <div class="section-head"><h2>Recognition</h2></div>
+  <div class="compact-list">
+    <div class="label"></div>
+    <div class="value">
+      <ul>
+        <li>IxDC &times; WDO 2024 — Top 10 Global Innovation Center, Lazada Design Studio</li>
+        <li>IxDC &times; WDO 2024 — Top 10 Global Innovation Officer</li>
+        <li>IxDC 2018 — Nominee, China Top 10 Outstanding Young Service Designers</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- PUBLICATIONS -->
+<div class="section">
+  <div class="section-head"><h2>Publications</h2></div>
+  <div class="compact-list">
+    <div class="label"></div>
+    <div class="value">
+      <ul>
+        <li><em>The World Traveler's Dog</em> — 2025</li>
+        <li><em>Lost in Iceland</em> — 2020</li>
+        <li><em>Take Time to Waste Your Life</em> — 2016</li>
+        <li><em>Keep It Simple</em> — 2015</li>
+        <li><em>Beyond Imagination</em> — 2012</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer-grid">
+  <div>
+    <div class="col-label">Education</div>
+    <div class="col-value">Hunan University of Commerce, 2003</div>
+  </div>
+  <div>
+    <div class="col-label">Languages</div>
+    <div class="col-value">Mandarin (native)<br>English (fluent)<br>Cantonese<br>Japanese (intermediate)</div>
+  </div>
+  <div>
+    <div class="col-label">Portfolio</div>
+    <div class="col-value"><a href="https://zhuhong.me" style="color:var(--dark);text-decoration:none;border-bottom:1px solid var(--light);">zhuhong.me</a></div>
+  </div>
+</div>
+
+</body>
+</html>
