@@ -21,7 +21,71 @@
       console.warn(&#39;Typekit not loaded.&#39;);
     }
     "></script><style type="text/css">@font-face{font-family:clby;src:url(https://use.typekit.net/af/61c231/00000000000000007735d3f4/31/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/61c231/00000000000000007735d3f4/31/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/61c231/00000000000000007735d3f4/31/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:clby;src:url(https://use.typekit.net/af/d4e9cc/00000000000000007735d3e7/31/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/d4e9cc/00000000000000007735d3e7/31/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/d4e9cc/00000000000000007735d3e7/31/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:ftnk;src:url(https://use.typekit.net/af/9c3000/000000000000000077586b5e/31/l?subset_id=2&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/9c3000/000000000000000077586b5e/31/d?subset_id=2&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/9c3000/000000000000000077586b5e/31/a?subset_id=2&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:ftnk;src:url(https://use.typekit.net/af/26b618/000000000000000077586b59/31/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/26b618/000000000000000077586b59/31/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/26b618/000000000000000077586b59/31/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:ftnk;src:url(https://use.typekit.net/af/361f51/000000000000000077586b60/31/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/361f51/000000000000000077586b60/31/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/361f51/000000000000000077586b60/31/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-stretch:normal;font-display:auto;}</style>
-<style type="text/css"></style><style id="hero-nav-white">
+<style type="text/css"></style><style id="works-covers-override">
+  /* Show title/date below image instead of hover overlay */
+  .project-cover .details-wrap {
+    position: static !important;
+    opacity: 1 !important;
+    background: transparent !important;
+    padding: 10px 0 0 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+    top: auto !important;
+    transition: none !important;
+  }
+  .project-cover .details {
+    background: transparent !important;
+    display: block !important;
+    height: auto !important;
+    width: auto !important;
+    position: static !important;
+  }
+  .project-cover .details-inner {
+    background: transparent !important;
+    text-align: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: auto !important;
+  }
+  .project-cover .title {
+    color: #222 !important;
+    font-family: ftnk, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 1.3 !important;
+    opacity: 1 !important;
+  }
+  .project-cover .date {
+    color: #999 !important;
+    font-family: ftnk, sans-serif !important;
+    font-size: 13px !important;
+    opacity: 1 !important;
+  }
+  /* Hover: scale image 10% instead of gray-out */
+  .project-cover .cover-image-wrap {
+    overflow: hidden !important;
+  }
+  .project-cover .cover-image {
+    transition: transform 0.35s ease !important;
+  }
+  .project-cover:hover .cover-image,
+  .project-cover.touch-hover .cover-image {
+    transform: scale(1.1) !important;
+  }
+  /* Remove rollover darkening on both cover and cover-image */
+  .project-cover .cover:after,
+  .project-cover .cover-image:after {
+    display: none !important;
+  }
+  .project-cover:hover .cover-image:after,
+  .project-cover.touch-hover .cover-image:after {
+    display: none !important;
+  }
+  /* Add row gap since visible titles add height */
+  .project-cover {
+    margin-bottom: 36px !important;
+  }
+</style><style id="hero-nav-white">
   /* Top-of-page over dark hero — make header transparent and invert text/icons */
   .site-header:not(.on-scroll) {
     background: transparent !important;
@@ -274,36 +338,17 @@
                               </div>
                 </div>
               </div>
-              <div class="details-wrap">
+            </div>
+              <div>
                 <div class="details">
                   <div class="details-inner">
-                      <div class="title preserve-whitespace">Lazada — SEA Design Leadership, Vision Pro</div>
-                      <div class="date">2025</div>
+                      <div class="title preserve-whitespace">Lazada - Singapore</div>
+                      <div class="date">2021-2026</div>
                   </div>
                 </div>
               </div>
-            </div>
           </a>
-          <a class="project-cover js-project-cover-touch hold-space" href="WorksMicrosoft.html" data-context="pages" data-hover-hint="galleryPageCover">
-            <div class="cover-content-container">
-              <div class="cover-image-wrap">
-                <div class="cover-image">
-                    <div class="cover cover-normal">
 
-            <img class="cover__img js-lazy image-loaded" src="./assets/images/works-microsoft-00.png" alt="Microsoft">
-                              </div>
-                </div>
-              </div>
-              <div class="details-wrap">
-                <div class="details">
-                  <div class="details-inner">
-                      <div class="title preserve-whitespace">Microsoft — Xbox, HoloLens</div>
-                      <div class="date">2012-2015</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
           <a class="project-cover js-project-cover-touch hold-space" href="WorksXiaomi.html" data-context="pages" data-hover-hint="galleryPageCover">
             <div class="cover-content-container">
               <div class="cover-image-wrap">
@@ -314,15 +359,35 @@
                               </div>
                 </div>
               </div>
-              <div class="details-wrap">
+            </div>
+              <div>
                 <div class="details">
                   <div class="details-inner">
-                      <div class="title preserve-whitespace">Xiaomi International</div>
+                      <div class="title preserve-whitespace">Xiaomi - Beijing</div>
                       <div class="date">2020-2021</div>
                   </div>
                 </div>
               </div>
+          </a>
+                    <a class="project-cover js-project-cover-touch hold-space" href="WorksMicrosoft.html" data-context="pages" data-hover-hint="galleryPageCover">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img class="cover__img js-lazy image-loaded" src="./assets/images/works-microsoft-00.png" alt="Microsoft">
+                              </div>
+                </div>
+              </div>
             </div>
+              <div>
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Microsoft - Beijing/Seattle</div>
+                      <div class="date">2012-2015</div>
+                  </div>
+                </div>
+              </div>
           </a>
           <!-- Row 2: Monster, XiQi, D20 -->
           <a class="project-cover js-project-cover-touch hold-space" href="WorksMonster.html" data-context="pages" data-identity="id:p68b475074efe63d57bca953d3e780e98f265cb62db0b6d9bc93d0" data-hover-hint="galleryPageCover" data-hover-hint-id="p68b475074efe63d57bca953d3e780e98f265cb62db0b6d9bc93d0">
@@ -335,15 +400,15 @@
                               </div>
                 </div>
               </div>
+            </div>
               <div class="details-wrap">
                 <div class="details">
                   <div class="details-inner">
-                      <div class="title preserve-whitespace">Monster Vending</div>
+                      <div class="title preserve-whitespace">Project Monster Vending</div>
                       <div class="date">2017</div>
                   </div>
                 </div>
               </div>
-            </div>
           </a>
           <a class="project-cover js-project-cover-touch hold-space" href="WorksXiqi.html" data-context="pages" data-identity="id:p68bab07358642a72fedca4c60f648ab65dc2d72345f9102a91c95" data-hover-hint="galleryPageCover" data-hover-hint-id="p68bab07358642a72fedca4c60f648ab65dc2d72345f9102a91c95">
             <div class="cover-content-container">
@@ -355,15 +420,15 @@
                               </div>
                 </div>
               </div>
+            </div>
               <div class="details-wrap">
                 <div class="details">
                   <div class="details-inner">
-                      <div class="title preserve-whitespace">XiQi — AR on Surface</div>
+                      <div class="title preserve-whitespace">Project XiQi Art</div>
                       <div class="date">2014</div>
                   </div>
                 </div>
               </div>
-            </div>
           </a>
           <a class="project-cover js-project-cover-touch hold-space" href="WorksD20.html" data-context="pages" data-identity="id:p68b2f6fb53a27cff813abf02e22d3ef793ffd60785d8f636d79b9" data-hover-hint="galleryPageCover" data-hover-hint-id="p68b2f6fb53a27cff813abf02e22d3ef793ffd60785d8f636d79b9">
             <div class="cover-content-container">
@@ -375,15 +440,15 @@
                               </div>
                 </div>
               </div>
+            </div>
               <div class="details-wrap">
                 <div class="details">
                   <div class="details-inner">
-                      <div class="title preserve-whitespace">D20 Exhibition</div>
+                      <div class="title preserve-whitespace">Project D20 Exhibition</div>
                       <div class="date">2025</div>
                   </div>
                 </div>
               </div>
-            </div>
           </a>
           <!-- Row 3: Cuijian, Brand, Watch -->
           <a class="project-cover js-project-cover-touch hold-space" href="WorksCuijian.html" data-context="pages" data-identity="id:p68baa96cc17a8f058faf3e2dccf2aba33d4aff3202ddca78981f2" data-hover-hint="galleryPageCover" data-hover-hint-id="p68baa96cc17a8f058faf3e2dccf2aba33d4aff3202ddca78981f2">
@@ -396,15 +461,15 @@
                               </div>
                 </div>
               </div>
+            </div>
               <div class="details-wrap">
                 <div class="details">
                   <div class="details-inner">
-                      <div class="title preserve-whitespace">Cuijian — gyroscope AR</div>
+                      <div class="title preserve-whitespace">Project Cuijian AR</div>
                       <div class="date">2016</div>
                   </div>
                 </div>
               </div>
-            </div>
           </a>
           <a class="project-cover js-project-cover-touch hold-space" href="WorksBrand.html" data-context="pages" data-hover-hint="galleryPageCover">
             <div class="cover-content-container">
@@ -416,15 +481,15 @@
                               </div>
                 </div>
               </div>
+            </div>
               <div class="details-wrap">
                 <div class="details">
                   <div class="details-inner">
                       <div class="title preserve-whitespace">Brand Design</div>
-                      <div class="date">2024-2026</div>
+                      <div class="date">-</div>
                   </div>
                 </div>
               </div>
-            </div>
           </a>
           <a class="project-cover js-project-cover-touch hold-space" href="WorksWatch.html" data-context="pages" data-hover-hint="galleryPageCover">
             <div class="cover-content-container">
@@ -436,15 +501,15 @@
                               </div>
                 </div>
               </div>
+            </div>
               <div class="details-wrap">
                 <div class="details">
                   <div class="details-inner">
-                      <div class="title preserve-whitespace">Watch Design</div>
+                      <div class="title preserve-whitespace">A Watch</div>
                       <div class="date">2018</div>
                   </div>
                 </div>
               </div>
-            </div>
           </a>
           <!-- AI Design: hidden but page preserved -->
           <a class="project-cover js-project-cover-touch hold-space" href="WorksAI.html" data-context="pages" data-hover-hint="galleryPageCover" style="display:none;">
@@ -457,6 +522,7 @@
                               </div>
                 </div>
               </div>
+            </div>
               <div class="details-wrap">
                 <div class="details">
                   <div class="details-inner">
@@ -465,7 +531,6 @@
                   </div>
                 </div>
               </div>
-            </div>
           </a>
           </section>
               <footer class="site-footer" data-hover-hint="footer">

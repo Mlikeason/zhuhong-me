@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Things admin · zhuhong.me</title>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>
+  <style>
+    :root {
+      --bg: #f5f4f1;
+      --panel: #ffffff;
+      --ink: #222;
+      --muted: #888;
+      --line: #e4e2dd;
+      --accent: #222;
+      --warn: #fff6d6;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
+    body { font: 14px/1.4 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; padding: 24px 32px 80px; }
+    h1 { font-weight: 400; font-size: 22px; margin: 0; }
+    p.sub { color: var(--muted); margin: 4px 0 0; }
+    .toolbar {
+      position: sticky; top: 0; z-index: 20;
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px 0; margin: 16px 0 8px;
+      background: var(--bg); border-bottom: 1px solid var(--line);
+    }
+    .toolbar .spacer { flex: 1; }
+    .toolbar .count { color: var(--muted); font-size: 13px; margin-right: 8px; }
+    button {
+      padding: 8px 14px; border: 1px solid #ccc; background: white; cursor: pointer;
+      border-radius: 4px; font: inherit; color: inherit;
+    }
+    button:hover { border-color: #888; }
+    button.primary { background: var(--accent); color: white; border-color: var(--accent); }
+    button.primary:hover { background: #000; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    #status { padding: 10px 14px; border-radius: 4px; margin: 8px 0; display: none; font-size: 13px; }
+    #status.show { display: block; }
+    #status.ok { background: #e9f4e3; color: #2d5e1f; }
+    #status.err { background: #fbe5e0; color: #8b2c1a; }
+    #status.info { background: var(--warn); }
+
+    .grid {
+      display: grid; gap: 14px;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      padding: 12px 0;
+    }
+    .item {
+      background: var(--panel); border-radius: 6px; overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      cursor: grab; user-select: none;
+      transition: box-shadow 120ms;
+    }
+    .item:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.10); }
+    .item.sortable-ghost { opacity: 0.3; }
+    .item.sortable-chosen { cursor: grabbing; }
+    .item .thumb {
+      aspect-ratio: 1; background: #eee center/cover no-repeat; display: block;
+    }
+    .item .caption {
+      padding: 8px 8px 4px;
+    }
+    .item .caption input {
+      width: 100%; border: 1px solid transparent; padding: 4px 6px; border-radius: 3px;
+      font: 14px inherit; color: inherit; background: transparent;
+    }
+    .item .caption input:hover { background: #fafafa; border-color: var(--line); }
+    .item .caption input:focus { outline: none; background: #fff; border-color: #999; cursor: text; }
+    .item .meta {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 8px 8px; font-size: 11px; color: var(--muted);
+    }
+    .item .meta .filename { font-family: ui-monospace, Menlo, monospace; }
+    .item .delete {
+      background: none; border: none; color: #c33; cursor: pointer;
+      padding: 2px 6px; font-size: 12px; border-radius: 3px;
+    }
+    .item .delete:hover { background: #fbe5e0; }
+    #fileInput { display: none; }
+    .help { color: var(--muted); font-size: 12px; padding: 12px; background: white; border-radius: 4px; margin-top: 16px; }
+    .help code { background: #f0eee9; padding: 1px 4px; border-radius: 2px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Things admin</h1>
+    <p class="sub">Drag tiles to reorder · click caption to edit · save writes back to <code>index.html</code></p>
+  </header>
+
+  <div class="toolbar">
+    <button onclick="addNew()">+ Add new thing</button>
+    <input type="file" id="fileInput" accept="image/*">
+    <div class="spacer"></div>
+    <span class="count" id="count">— items</span>
+    <span class="count" id="dirty" style="color:#a60; display:none;">unsaved changes</span>
+    <button class="primary" id="saveBtn" onclick="saveAll()">Save changes</button>
+  </div>
+
+  <div id="status"></div>
+  <div class="grid" id="grid"></div>
+
+  <div class="help">
+    Workflow: edit here → click <strong>Save changes</strong> → <code>index.html</code> is rewritten on disk.
+    Open <code>index.html</code> in a browser tab to preview, then <code>git add -p &amp;&amp; git commit</code> when ready.
+    Stop this server with <code>Ctrl-C</code> in the terminal.
+  </div>
+
+  <script>
+    let items = [];
+    let dirty = false;
+    let lastSavedHash = '';
+
+    function hash(s) {
+      let h = 0;
+      for (let i = 0; i < s.length; i++) { h = ((h << 5) - h + s.charCodeAt(i)) | 0; }
+      return String(h);
+    }
+    function snapshot() { return hash(JSON.stringify(items)); }
+    function markDirty() {
+      dirty = snapshot() !== lastSavedHash;
+      document.getElementById('dirty').style.display = dirty ? '' : 'none';
+    }
+
+    async function load() {
+      try {
+        const r = await fetch('/api/things');
+        items = await r.json();
+        lastSavedHash = snapshot();
+        render();
+        showStatus(`Loaded ${items.length} items.`, 'info', 2000);
+      } catch (e) {
+        showStatus('Failed to load: ' + e.message, 'err');
+      }
+    }
+
+    function render() {
+      const grid = document.getElementById('grid');
+      grid.innerHTML = items.map((it, i) => `
+        <div class="item" data-i="${i}">
+          <div class="thumb" style="background-image: url('/assets/things/${escAttr(it.file)}')"></div>
+          <div class="caption">
+            <input type="text" value="${escAttr(it.caption)}" data-i="${i}" placeholder="caption">
+          </div>
+          <div class="meta">
+            <span class="filename">${escAttr(it.file)}</span>
+            <button class="delete" data-i="${i}">delete</button>
+          </div>
+        </div>
+      `).join('');
+      document.getElementById('count').textContent = `${items.length} item${items.length === 1 ? '' : 's'}`;
+
+      grid.querySelectorAll('input').forEach(inp => {
+        inp.addEventListener('input', (e) => {
+          const i = +e.target.dataset.i;
+          items[i].caption = e.target.value;
+          markDirty();
+        });
+      });
+      grid.querySelectorAll('.delete').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const i = +e.currentTarget.dataset.i;
+          if (!confirm(`Remove "${items[i].caption || items[i].file}"? (Image file stays on disk; you can re-add later.)`)) return;
+          items.splice(i, 1);
+          render();
+          markDirty();
+        });
+      });
+
+      if (window.__sortable) window.__sortable.destroy();
+      window.__sortable = new Sortable(grid, {
+        animation: 150,
+        ghostClass: 'sortable-ghost',
+        chosenClass: 'sortable-chosen',
+        filter: 'input, .delete',
+        preventOnFilter: false,
+        onEnd: (evt) => {
+          if (evt.oldIndex === evt.newIndex) return;
+          const moved = items.splice(evt.oldIndex, 1)[0];
+          items.splice(evt.newIndex, 0, moved);
+          render();
+          markDirty();
+        }
+      });
+
+      markDirty();
+    }
+
+    function addNew() {
+      document.getElementById('fileInput').click();
+    }
+
+    document.getElementById('fileInput').addEventListener('change', async (ev) => {
+      const file = ev.target.files[0];
+      ev.target.value = '';
+      if (!file) return;
+      const caption = prompt('Caption (1–2 words):', '');
+      if (caption === null) return;
+
+      try {
+        showStatus('Uploading…', 'info');
+        const data_base64 = await fileToBase64(file);
+        const r = await fetch('/api/upload', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            content_type: file.type || 'image/jpeg',
+            original_name: file.name,
+            data_base64
+          })
+        });
+        if (!r.ok) throw new Error(await r.text());
+        const result = await r.json();
+        items.unshift({file: result.file, caption: caption || 'Untitled'});
+        render();
+        markDirty();
+        showStatus(`Uploaded as ${result.file}. Don't forget Save.`, 'info', 3500);
+      } catch (e) {
+        showStatus('Upload failed: ' + e.message, 'err');
+      }
+    });
+
+    function fileToBase64(file) {
+      return new Promise((res, rej) => {
+        const r = new FileReader();
+        r.onload = () => res(r.result.split(',')[1]);
+        r.onerror = rej;
+        r.readAsDataURL(file);
+      });
+    }
+
+    async function saveAll() {
+      const btn = document.getElementById('saveBtn');
+      btn.disabled = true;
+      try {
+        const r = await fetch('/api/things', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(items)
+        });
+        if (!r.ok) throw new Error(await r.text());
+        lastSavedHash = snapshot();
+        markDirty();
+        showStatus(`Saved ${items.length} items to index.html. git diff to review.`, 'ok', 4000);
+      } catch (e) {
+        showStatus('Save failed: ' + e.message, 'err');
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    function showStatus(msg, kind, timeoutMs) {
+      const el = document.getElementById('status');
+      el.textContent = msg;
+      el.className = 'show ' + (kind || '');
+      if (timeoutMs) setTimeout(() => el.className = '', timeoutMs);
+    }
+
+    function escAttr(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    window.addEventListener('beforeunload', (e) => {
+      if (dirty) { e.preventDefault(); e.returnValue = ''; }
+    });
+
+    load();
+  </script>
+</body>
+</html>

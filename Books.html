@@ -66,6 +66,71 @@
   }
 
 </style>
+<style id="covers-override">
+  /* Show title/date below image instead of hover overlay */
+  .project-cover .details-wrap {
+    position: static !important;
+    opacity: 1 !important;
+    background: transparent !important;
+    padding: 10px 0 0 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+    top: auto !important;
+    transition: none !important;
+  }
+  .project-cover .details {
+    background: transparent !important;
+    display: block !important;
+    height: auto !important;
+    width: auto !important;
+    position: static !important;
+  }
+  .project-cover .details-inner {
+    background: transparent !important;
+    text-align: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: auto !important;
+  }
+  .project-cover .title {
+    color: #222 !important;
+    font-family: ftnk, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 1.3 !important;
+    opacity: 1 !important;
+  }
+  .project-cover .date {
+    color: #999 !important;
+    font-family: ftnk, sans-serif !important;
+    font-size: 13px !important;
+    opacity: 1 !important;
+  }
+  /* Hover: scale image 10% instead of gray-out */
+  .project-cover .cover-image-wrap {
+    overflow: hidden !important;
+  }
+  .project-cover .cover-image {
+    transition: transform 0.35s ease !important;
+  }
+  .project-cover:hover .cover-image,
+  .project-cover.touch-hover .cover-image {
+    transform: scale(1.1) !important;
+  }
+  /* Remove rollover darkening */
+  .project-cover .cover:after,
+  .project-cover .cover-image:after {
+    display: none !important;
+  }
+  .project-cover:hover .cover-image:after,
+  .project-cover.touch-hover .cover-image:after {
+    display: none !important;
+  }
+  /* Row gap for visible titles */
+  .project-cover {
+    margin-bottom: 36px !important;
+  }
+</style>
 </head>
   <body class="link-transition">  <div class="page-background-video page-background-video-with-panel">
   </div>
@@ -282,15 +347,16 @@
                               </div>
                 </div>
               </div>
-              <div class="details-wrap">
+            </div>
+            <div class="details-wrap">
                 <div class="details">
                   <div class="details-inner">
-                      <div class="title preserve-whitespace">AI book: The World traveler's Dog</div>
+                      <div class="title preserve-whitespace">The World traveler's Dog</div>
                       <div class="date">2025</div>
                   </div>
                 </div>
               </div>
-            </div>
+            
           </a>
           <a class="project-cover js-project-cover-touch hold-space" href="BooksIceland.html" data-context="pages" data-identity="id:p68b2f676b3f44eb8612a579900346a5773873b7d13cf8fb76d9e1" data-hover-hint="galleryPageCover" data-hover-hint-id="p68b2f676b3f44eb8612a579900346a5773873b7d13cf8fb76d9e1">
             <div class="cover-content-container">
@@ -302,7 +368,8 @@
                               </div>
                 </div>
               </div>
-              <div class="details-wrap">
+            </div>
+            <div class="details-wrap">
                 <div class="details">
                   <div class="details-inner">
                       <div class="title preserve-whitespace">Lost in Iceland</div>
@@ -310,7 +377,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            
           </a>
           <a class="project-cover js-project-cover-touch hold-space" href="BooksTaketime.html" data-context="pages" data-identity="id:p68b2f6d2c798f88db93b0c2122f3c852d4f7ff1c1a730389d97a1" data-hover-hint="galleryPageCover" data-hover-hint-id="p68b2f6d2c798f88db93b0c2122f3c852d4f7ff1c1a730389d97a1">
             <div class="cover-content-container">
@@ -322,7 +389,8 @@
                               </div>
                 </div>
               </div>
-              <div class="details-wrap">
+            </div>
+            <div class="details-wrap">
                 <div class="details">
                   <div class="details-inner">
                       <div class="title preserve-whitespace">Take Time to waste your life</div>
@@ -330,7 +398,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            
           </a>
           <a class="project-cover js-project-cover-touch hold-space" href="BooksKeep.html" data-context="pages" data-identity="id:p68b4756cc4e90340d02c5defbc071e285a2749c7a5a0262b161bc" data-hover-hint="galleryPageCover" data-hover-hint-id="p68b4756cc4e90340d02c5defbc071e285a2749c7a5a0262b161bc">
             <div class="cover-content-container">
@@ -342,7 +410,8 @@
                               </div>
                 </div>
               </div>
-              <div class="details-wrap">
+            </div>
+            <div class="details-wrap">
                 <div class="details">
                   <div class="details-inner">
                       <div class="title preserve-whitespace">Keep it Simple</div>
@@ -350,7 +419,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            
           </a>
           <a class="project-cover js-project-cover-touch hold-space" href="BooksBeyond.html" data-context="pages" data-hover-hint="galleryPageCover">
             <div class="cover-content-container">
@@ -358,11 +427,12 @@
                 <div class="cover-image">
                     <div class="cover cover-normal">
 
-            <img class="cover__img js-lazy image-loaded" src="./assets/images/me-09_rw_1920.png" srcset="./assets/images/me-09_rw_600.png 600w, ./assets/images/me-09_rw_1200.png 1200w, ./assets/images/me-09_rw_1920.png 1920w" sizes="(max-width: 1200px) 100vw, 1200px" alt="Beyond Imagination">
+            <img class="cover__img js-lazy image-loaded" src="./assets/images/me-09_rw_19201.png" srcset="./assets/images/me-09_rw_600.png 600w, ./assets/images/me-09_rw_1200.png 1200w, ./assets/images/me-09_rw_19201.png 1920w" sizes="(max-width: 1200px) 100vw, 1200px" alt="Beyond Imagination">
                               </div>
                 </div>
               </div>
-              <div class="details-wrap">
+            </div>
+            <div class="details-wrap">
                 <div class="details">
                   <div class="details-inner">
                       <div class="title preserve-whitespace">Beyond Imagination</div>
@@ -370,21 +440,22 @@
                   </div>
                 </div>
               </div>
-            </div>
+            
           </a>
           <div class="project-cover js-project-cover-touch hold-space" data-context="pages" style="cursor: default;">
             <div class="cover-content-container">
               <div class="cover-image-wrap">
                 <div class="cover-image">
                     <div class="cover cover-normal">
-            <img class="cover__img js-lazy image-loaded" src="./assets/images/me-08_rw_1200.png" alt="Salon 2012">
+            <img class="cover__img js-lazy image-loaded" src="./assets/images/me-08_rw_12001.png" alt="Salon 2012">
                               </div>
                 </div>
               </div>
               <div class="details-wrap">
                 <div class="details">
                   <div class="details-inner">
-                      <div class="title preserve-whitespace">Salon 2012</div>
+                      <div class="title preserve-whitespace">Salon</div>
+                      <div class="date">2012</div>
                   </div>
                 </div>
               </div>

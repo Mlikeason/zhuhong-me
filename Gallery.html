@@ -66,6 +66,71 @@
   }
 
 </style>
+<style id="covers-override">
+  /* Show title/date below image instead of hover overlay */
+  .project-cover .details-wrap {
+    position: static !important;
+    opacity: 1 !important;
+    background: transparent !important;
+    padding: 10px 0 0 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+    top: auto !important;
+    transition: none !important;
+  }
+  .project-cover .details {
+    background: transparent !important;
+    display: block !important;
+    height: auto !important;
+    width: auto !important;
+    position: static !important;
+  }
+  .project-cover .details-inner {
+    background: transparent !important;
+    text-align: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: auto !important;
+  }
+  .project-cover .title {
+    color: #222 !important;
+    font-family: ftnk, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 1.3 !important;
+    opacity: 1 !important;
+  }
+  .project-cover .date {
+    color: #999 !important;
+    font-family: ftnk, sans-serif !important;
+    font-size: 13px !important;
+    opacity: 1 !important;
+  }
+  /* Hover: scale image 10% instead of gray-out */
+  .project-cover .cover-image-wrap {
+    overflow: hidden !important;
+  }
+  .project-cover .cover-image {
+    transition: transform 0.35s ease !important;
+  }
+  .project-cover:hover .cover-image,
+  .project-cover.touch-hover .cover-image {
+    transform: scale(1.1) !important;
+  }
+  /* Remove rollover darkening */
+  .project-cover .cover:after,
+  .project-cover .cover-image:after {
+    display: none !important;
+  }
+  .project-cover:hover .cover-image:after,
+  .project-cover.touch-hover .cover-image:after {
+    display: none !important;
+  }
+  /* Row gap for visible titles */
+  .project-cover {
+    margin-bottom: 36px !important;
+  }
+</style>
 </head>
   <body class="link-transition">  <div class="page-background-video page-background-video-with-panel">
   </div>
@@ -282,15 +347,15 @@
                               </div>
                 </div>
               </div>
-              <div class="details-wrap">
+            </div>
+            <div class="details-wrap">
                 <div class="details">
                   <div class="details-inner">
                       <div class="title preserve-whitespace">Awards</div>
-                      <div class="date">2026</div>
                   </div>
                 </div>
               </div>
-            </div>
+            
           </a>
           <a class="project-cover js-project-cover-touch hold-space" href="Gallery500px.html" data-context="pages" data-identity="id:p68b46708f3c78b1c03d2e94da83ae2c744893ff9c301b6025ced9" data-hover-hint="galleryPageCover" data-hover-hint-id="p68b46708f3c78b1c03d2e94da83ae2c744893ff9c301b6025ced9">
             <div class="cover-content-container">
@@ -302,15 +367,15 @@
                               </div>
                 </div>
               </div>
-              <div class="details-wrap">
+            </div>
+            <div class="details-wrap">
                 <div class="details">
                   <div class="details-inner">
                       <div class="title preserve-whitespace">500px Authorized</div>
-                      <div class="date">2025</div>
                   </div>
                 </div>
               </div>
-            </div>
+            
           </a>
           <a class="project-cover js-project-cover-touch hold-space" href="GalleryWorld.html" data-context="pages" data-identity="id:p68b4692a3b120d956523fd80bfca833a03927cddc257b2a612132" data-hover-hint="galleryPageCover" data-hover-hint-id="p68b4692a3b120d956523fd80bfca833a03927cddc257b2a612132">
             <div class="cover-content-container">
@@ -322,15 +387,15 @@
                               </div>
                 </div>
               </div>
-              <div class="details-wrap">
+            </div>
+            <div class="details-wrap">
                 <div class="details">
                   <div class="details-inner">
                       <div class="title preserve-whitespace">World</div>
-                      <div class="date">2025</div>
                   </div>
                 </div>
               </div>
-            </div>
+            
           </a>
           </section>
               <footer class="site-footer" data-hover-hint="footer">

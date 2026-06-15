@@ -1810,9 +1810,7 @@ nav {
   margin-top: 0px; }
 
 .project-cover .details-wrap {
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
+
   padding-bottom: 8%; }
 
 .project-cover .details {

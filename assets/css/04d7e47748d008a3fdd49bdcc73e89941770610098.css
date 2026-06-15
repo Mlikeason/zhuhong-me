@@ -3068,9 +3068,7 @@ nav {
   margin-top: 1px; }
 
 .other-projects .project-cover .details-wrap {
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
+
   padding-bottom: 8%; }
 
 .other-projects .project-cover .details {
